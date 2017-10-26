@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div content>
+  <section class="header">
+    <div class="align-center">
+      <h1>
+        {{title}}
+      </h1>
+    </div>
+    <div class="align-right">
+      <nav>
+        <a routerLink="/portfolio" routerLinkActive="active">Home</a>
+        <a routerLink="/portrait" routerLinkActive="active">Portrait</a>
+        <a routerLink="/family" routerLinkActive="active">Family</a>
+        <a>Party</a>
+        <a>About</a>
+      </nav>
+    </div>
+  </section>
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+</div>
