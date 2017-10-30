@@ -1,0 +1,96 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\Family\landscape\1.jpg" />
+    <None Include="wwwroot\Images\Family\landscape\16.jpg" />
+    <None Include="wwwroot\Images\Family\landscape\18.jpg" />
+    <None Include="wwwroot\Images\Family\portrait\11.jpg" />
+    <None Include="wwwroot\Images\Family\portrait\14.jpg" />
+    <None Include="wwwroot\Images\Family\portrait\27.jpg" />
+    <None Include="wwwroot\Images\Family\portrait\29.jpg" />
+    <None Include="wwwroot\Images\Family\portrait\30.jpg" />
+    <None Include="wwwroot\Images\Family\portrait\31.jpg" />
+    <None Include="wwwroot\Images\Family\portrait\32.jpg" />
+    <None Include="wwwroot\Images\Family\portrait\33.jpg" />
+    <None Include="wwwroot\Images\Family\portrait\34.jpg" />
+    <None Include="wwwroot\Images\Family\portrait\35.jpg" />
+    <None Include="wwwroot\Images\Family\portrait\8.jpg" />
+    <None Include="wwwroot\Images\Family\portrait\9.jpg" />
+    <None Include="wwwroot\Images\Party\landscape\1.jpg" />
+    <None Include="wwwroot\Images\Party\landscape\20.jpg" />
+    <None Include="wwwroot\Images\Party\landscape\7.jpg" />
+    <None Include="wwwroot\Images\Party\portrait\27.jpg" />
+    <None Include="wwwroot\Images\Party\portrait\28.jpg" />
+    <None Include="wwwroot\Images\Party\portrait\29.jpg" />
+    <None Include="wwwroot\Images\Party\portrait\30.jpg" />
+    <None Include="wwwroot\Images\Party\portrait\31.jpg" />
+    <None Include="wwwroot\Images\Party\portrait\32.jpg" />
+    <None Include="wwwroot\Images\Party\portrait\35.jpg" />
+    <None Include="wwwroot\Images\Party\portrait\6.jpg" />
+    <None Include="wwwroot\Images\Portfolio\landscape\1.jpg" />
+    <None Include="wwwroot\Images\Portfolio\landscape\10.jpg" />
+    <None Include="wwwroot\Images\Portfolio\landscape\12.jpg" />
+    <None Include="wwwroot\Images\Portfolio\landscape\15.jpg" />
+    <None Include="wwwroot\Images\Portfolio\landscape\16.jpg" />
+    <None Include="wwwroot\Images\Portfolio\landscape\17.jpg" />
+    <None Include="wwwroot\Images\Portfolio\landscape\18.jpg" />
+    <None Include="wwwroot\Images\Portfolio\landscape\19.jpg" />
+    <None Include="wwwroot\Images\Portfolio\landscape\20.jpg" />
+    <None Include="wwwroot\Images\Portfolio\landscape\21.jpg" />
+    <None Include="wwwroot\Images\Portfolio\landscape\22.jpg" />
+    <None Include="wwwroot\Images\Portfolio\landscape\23.jpg" />
+    <None Include="wwwroot\Images\Portfolio\landscape\24.jpg" />
+    <None Include="wwwroot\Images\Portfolio\landscape\25.jpg" />
+    <None Include="wwwroot\Images\Portfolio\landscape\26.jpg" />
+    <None Include="wwwroot\Images\Portfolio\landscape\3.jpg" />
+    <None Include="wwwroot\Images\Portfolio\landscape\7.jpg" />
+    <None Include="wwwroot\Images\Portfolio\portrait\11.jpg" />
+    <None Include="wwwroot\Images\Portfolio\portrait\13.jpg" />
+    <None Include="wwwroot\Images\Portfolio\portrait\14.jpg" />
+    <None Include="wwwroot\Images\Portfolio\portrait\27.jpg" />
+    <None Include="wwwroot\Images\Portfolio\portrait\28.jpg" />
+    <None Include="wwwroot\Images\Portfolio\portrait\29.jpg" />
+    <None Include="wwwroot\Images\Portfolio\portrait\30.jpg" />
+    <None Include="wwwroot\Images\Portfolio\portrait\31.jpg" />
+    <None Include="wwwroot\Images\Portfolio\portrait\32.jpg" />
+    <None Include="wwwroot\Images\Portfolio\portrait\33.jpg" />
+    <None Include="wwwroot\Images\Portfolio\portrait\34.jpg" />
+    <None Include="wwwroot\Images\Portfolio\portrait\35.jpg" />
+    <None Include="wwwroot\Images\Portfolio\portrait\5.jpg" />
+    <None Include="wwwroot\Images\Portfolio\portrait\6.jpg" />
+    <None Include="wwwroot\Images\Portfolio\portrait\8.jpg" />
+    <None Include="wwwroot\Images\Portfolio\portrait\9.jpg" />
+    <None Include="wwwroot\Images\Portrait\landscape\1.jpg" />
+    <None Include="wwwroot\Images\Portrait\landscape\16.jpg" />
+    <None Include="wwwroot\Images\Portrait\landscape\18.jpg" />
+    <None Include="wwwroot\Images\Portrait\landscape\20.jpg" />
+    <None Include="wwwroot\Images\Portrait\portrait\11.jpg" />
+    <None Include="wwwroot\Images\Portrait\portrait\13.jpg" />
+    <None Include="wwwroot\Images\Portrait\portrait\14.jpg" />
+    <None Include="wwwroot\Images\Portrait\portrait\28.jpg" />
+    <None Include="wwwroot\Images\Portrait\portrait\30.jpg" />
+    <None Include="wwwroot\Images\Portrait\portrait\31.jpg" />
+    <None Include="wwwroot\Images\Portrait\portrait\33.jpg" />
+    <None Include="wwwroot\Images\Portrait\portrait\35.jpg" />
+    <None Include="wwwroot\Images\Portrait\portrait\5.jpg" />
+    <None Include="wwwroot\Images\Portrait\portrait\6.jpg" />
+    <None Include="wwwroot\Images\Portrait\portrait\8.jpg" />
+    <None Include="wwwroot\Images\Portrait\portrait\9.jpg" />
+  </ItemGroup>
+
+</Project>

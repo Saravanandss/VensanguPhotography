@@ -10,15 +10,23 @@ const routes: Routes = [
     },
     {
         path: 'portfolio',
-        component: PortfolioComponent
+        component: PortfolioComponent,
+        data: {type: 'portfolio'}
     },
     {
         path: 'portrait',
-        component: PortfolioComponent
+        component: PortfolioComponent,
+        data: {type: 'portrait'}
     },
     {
         path: 'family',
-        component: PortfolioComponent
+        component: PortfolioComponent,
+        data: {type: 'family'}
+    },
+    {
+        path: 'party',
+        component: PortfolioComponent,
+        data: {type: 'party'}
     }
 ];
 

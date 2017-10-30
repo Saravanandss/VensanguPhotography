@@ -23,7 +23,10 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "VensanguPhotography.Web(1)"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "56900"
+		SlnRelativePath = "VensanguPhotography.Web\"
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VensanguPhotography.ImageApi", "VensanguPhotography.ImageApi\VensanguPhotography.ImageApi.csproj", "{796E35A3-9F4F-462E-878F-4CB8F4777155}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +42,10 @@ Global
 		{EB76A6A3-C915-4538-B959-2E2690C6CB8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB76A6A3-C915-4538-B959-2E2690C6CB8D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{EB76A6A3-C915-4538-B959-2E2690C6CB8D}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{796E35A3-9F4F-462E-878F-4CB8F4777155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{796E35A3-9F4F-462E-878F-4CB8F4777155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{796E35A3-9F4F-462E-878F-4CB8F4777155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{796E35A3-9F4F-462E-878F-4CB8F4777155}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

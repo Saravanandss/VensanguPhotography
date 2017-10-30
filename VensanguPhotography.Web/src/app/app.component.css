@@ -14,28 +14,21 @@
     margin-top: 10px;
     margin-bottom: 10px;
     display: inline-block;
-    color: 576a74;
-    text-shadow: 2px 2px 5px gray;
-    /* background-color: #f5f5f5;
+    color: #38383B;
+    text-shadow:none;
     border-radius: 4px;
-    border-top-right-radius: 15px;     */
+    text-shadow: 6px 6px 8px #a1a0a0;
   }
-
-  /* nav a:visited, a:link {
-    color: #607D8B;
-  } */
 
   nav a:hover {
     color: #6c7b81;
-    /* background-color: rgb(226, 226, 226); */
-    /* text-shadow: 1px 1px 2px gray; */
+    /* text-shadow: 2px 2px 5px #c7bf94; */
   }
 
   nav a.active {
-    color: #576a74;
-    /* font-weight:bold; */
+    color: #38383B;
     border-bottom:1px #576a74 solid;
-    text-shadow: 1px 1px 1px gray;
+    text-shadow: 1px 1px 4px #a1a0a0;
   }
 
   h1{

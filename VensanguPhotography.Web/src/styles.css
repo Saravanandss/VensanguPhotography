@@ -2,4 +2,11 @@
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: whitesmoke;
+  color:#38383B;
 }
+/* color palette: http://paletton.com/palette.php?uid=1470L0k1ZnV29aI2ehX1muw0oOV */
+.color-primary-0 { color: #7E7D84 }	/* Main Primary color */
+.color-primary-1 { color: #38383B }
+.color-primary-2 { color: #5E5D63 }
+.color-primary-3 { color: #A3A2A8 }
+.color-primary-4 { color: #DFDFE1 }
