@@ -11,14 +11,6 @@ namespace VensanguPhotography.ImageApi.Controllers
     [Route("api/[controller]")]
     public class ImagesController : Controller
     {
-        // GET api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/values/5
         [HttpGet("{type}")]
         public ImagesModel Get(string type)
         {
@@ -27,29 +19,13 @@ namespace VensanguPhotography.ImageApi.Controllers
 
             var imagesModel = new ImagesModel
             {
-                Landscapes = Directory.GetFiles(path + @"\landscape", "*.jpg"),
+                Landscapes = Directory.GetFiles(path + @"\landscape", "*.jpg")
+                    .Select(p => "ImageApi/" + p.Replace("wwwroot\\", "").Replace('\\', '/')).ToArray(),
                 Portraits = Directory.GetFiles(path + @"\portrait", "*.jpg")
+                    .Select(p => "ImageApi/" + p.Replace("wwwroot\\", "").Replace('\\', '/')).ToArray()
             };
-            
+
             return imagesModel;
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }

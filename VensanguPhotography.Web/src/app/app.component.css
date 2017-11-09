@@ -29,6 +29,7 @@
     color: #38383B;
     border-bottom:1px #576a74 solid;
     text-shadow: 1px 1px 4px #a1a0a0;
+    pointer-events: none;
   }
 
   h1{

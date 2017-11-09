@@ -1,0 +1,11 @@
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi\bin\Debug\netcoreapp2.0\VensanguPhotography.ImageApi.deps.json
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi\bin\Debug\netcoreapp2.0\VensanguPhotography.ImageApi.runtimeconfig.json
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi\bin\Debug\netcoreapp2.0\VensanguPhotography.ImageApi.runtimeconfig.dev.json
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi\bin\Debug\netcoreapp2.0\VensanguPhotography.ImageApi.dll
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi\bin\Debug\netcoreapp2.0\VensanguPhotography.ImageApi.pdb
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi\obj\Debug\netcoreapp2.0\VensanguPhotography.ImageApi.csprojResolveAssemblyReference.cache
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi\obj\Debug\netcoreapp2.0\VensanguPhotography.ImageApi.csproj.CoreCompileInputs.cache
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi\obj\Debug\netcoreapp2.0\VensanguPhotography.ImageApi.AssemblyInfoInputs.cache
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi\obj\Debug\netcoreapp2.0\VensanguPhotography.ImageApi.AssemblyInfo.cs
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi\obj\Debug\netcoreapp2.0\VensanguPhotography.ImageApi.dll
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi\obj\Debug\netcoreapp2.0\VensanguPhotography.ImageApi.pdb

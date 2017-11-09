@@ -27,6 +27,10 @@ const routes: Routes = [
         path: 'party',
         component: PortfolioComponent,
         data: {type: 'party'}
+    },
+    {
+        path: '**',
+        redirectTo: '/portfolio'
     }
 ];
 
