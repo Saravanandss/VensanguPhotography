@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PortfolioComponent } from './portfolio.component';
+import { AboutComponent } from './about.component';
 
 const routes: Routes = [
     {
@@ -27,6 +28,10 @@ const routes: Routes = [
         path: 'party',
         component: PortfolioComponent,
         data: {type: 'party'}
+    },
+    {
+        path:'about',
+        component: AboutComponent
     },
     {
         path: '**',

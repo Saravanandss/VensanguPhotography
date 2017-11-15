@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module'
 import { PortfolioComponent } from './portfolio.component';
 import { PortfolioService } from './portfolio.service';
-
+import { AboutComponent } from './about.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

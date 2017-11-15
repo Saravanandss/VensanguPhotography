@@ -1,32 +1,40 @@
-<div class="image-container" *ngFor="let i of [1, 2]">
-    <div class="block">
-        <div class="image-row">
-            <div class="image-div picture-frame-row" [style.width.px]="portraitSize.Width" [style.height.px]="portraitSize.Height" [ngStyle]="getPortraitBackground()" ></div><!--
-            --><div class="image-div picture-frame-row" [style.width.px]="portraitSize.Width" [style.height.px]="portraitSize.Height" [ngStyle]="getPortraitBackground()"></div><!--
-            --><div class="image-div picture-frame-row" [style.width.px]="portraitSize.Width" [style.height.px]="portraitSize.Height" [ngStyle]="getPortraitBackground()"></div>
-        </div>
-    </div><!--
-    --><div class="block">
-        <div class="image-col">
-            <div class="image-div picture-frame-col" [style.width.px]="colLandscapeSize.Width" [style.height.px]="colLandscapeSize.Height" [ngStyle]="getLandscapeBackground()"></div>
-            <div class="image-div picture-frame-col" [style.width.px]="portraitSize.Width" [style.height.px]="portraitSize.Height" [ngStyle]="getPortraitBackground()"></div>            
-            <div class="image-div picture-frame-col" [style.width.px]="colLandscapeSize.Width" [style.height.px]="colLandscapeSize.Height" [ngStyle]="getLandscapeBackground()"></div>
-        </div><!--
-        --><div class="image-col">
-            <div class="image-div picture-frame-col" [style.width.px]="portraitSize.Width" [style.height.px]="portraitSize.Height" [ngStyle]="getPortraitBackground()"></div>           
-            <div class="image-div picture-frame-col" [style.width.px]="colLandscapeSize.Width" [style.height.px]="colLandscapeSize.Height" [ngStyle]="getLandscapeBackground()"></div>
-            <div class="image-div picture-frame-col" [style.width.px]="colLandscapeSize.Width" [style.height.px]="colLandscapeSize.Height" [ngStyle]="getLandscapeBackground()"></div>
-        </div><!--
-        --><div class="image-col">
-            <div class="image-div picture-frame-col" [style.width.px]="colLandscapeSize.Width" [style.height.px]="colLandscapeSize.Height" [ngStyle]="getLandscapeBackground()"></div>
-            <div class="image-div picture-frame-col" [style.width.px]="colLandscapeSize.Width" [style.height.px]="colLandscapeSize.Height" [ngStyle]="getLandscapeBackground()"></div>
-            <div class="image-div picture-frame-col" [style.width.px]="portraitSize.Width" [style.height.px]="portraitSize.Height" [ngStyle]="getPortraitBackground()"></div>        
-        </div>
-    </div><!--
-    --><div class="block">
-        <div class="image-row">
-            <div class="image-div picture-frame-row" [style.width.px]="rowLandscapeSize.Width" [style.height.px]="rowLandscapeSize.Height" [ngStyle]="getLandscapeBackground()"></div><!--
-            --><div class="image-div picture-frame-row" [style.width.px]="rowLandscapeSize.Width" [style.height.px]="rowLandscapeSize.Height" [ngStyle]="getLandscapeBackground()"></div>
-        </div>
-    </div>    
-</div>
+<ng-container *ngFor="let i of [1, 2, 3]">
+    <div class="image-container">
+        <ng-container *ngIf="canRenderPortraitRow()">
+            <div class="block">
+                <div class="image-row">
+                    <div class="image-div picture-frame-row" [style.width.px]="portraitSize.Width" [style.height.px]="portraitSize.Height" [ngStyle]="getPortraitBackground()" ></div><!--
+                    --><div class="image-div picture-frame-row" [style.width.px]="portraitSize.Width" [style.height.px]="portraitSize.Height" [ngStyle]="getPortraitBackground()"></div><!--
+                    --><div class="image-div picture-frame-row" [style.width.px]="portraitSize.Width" [style.height.px]="portraitSize.Height" [ngStyle]="getPortraitBackground()"></div>
+                </div>
+            </div>
+        </ng-container><!--
+        --><ng-container *ngIf="canRenderColumns()">
+            <div class="block">
+                <div class="image-col">
+                    <div class="image-div picture-frame-col" [style.width.px]="colLandscapeSize.Width" [style.height.px]="colLandscapeSize.Height" [ngStyle]="getLandscapeBackground()"></div>
+                    <div class="image-div picture-frame-col" [style.width.px]="portraitSize.Width" [style.height.px]="portraitSize.Height" [ngStyle]="getPortraitBackground()"></div>            
+                    <div class="image-div picture-frame-col" [style.width.px]="colLandscapeSize.Width" [style.height.px]="colLandscapeSize.Height" [ngStyle]="getLandscapeBackground()"></div>
+                </div><!--
+                --><div class="image-col">
+                    <div class="image-div picture-frame-col" [style.width.px]="portraitSize.Width" [style.height.px]="portraitSize.Height" [ngStyle]="getPortraitBackground()"></div>           
+                    <div class="image-div picture-frame-col" [style.width.px]="colLandscapeSize.Width" [style.height.px]="colLandscapeSize.Height" [ngStyle]="getLandscapeBackground()"></div>
+                    <div class="image-div picture-frame-col" [style.width.px]="colLandscapeSize.Width" [style.height.px]="colLandscapeSize.Height" [ngStyle]="getLandscapeBackground()"></div>
+                </div><!--
+                --><div class="image-col">
+                    <div class="image-div picture-frame-col" [style.width.px]="colLandscapeSize.Width" [style.height.px]="colLandscapeSize.Height" [ngStyle]="getLandscapeBackground()"></div>
+                    <div class="image-div picture-frame-col" [style.width.px]="colLandscapeSize.Width" [style.height.px]="colLandscapeSize.Height" [ngStyle]="getLandscapeBackground()"></div>
+                    <div class="image-div picture-frame-col" [style.width.px]="portraitSize.Width" [style.height.px]="portraitSize.Height" [ngStyle]="getPortraitBackground()"></div>        
+                </div>
+            </div>
+        </ng-container><!--
+        --><ng-container *ngIf="canRenderLandscapeRow()">
+            <div class="block">
+                <div class="image-row">
+                    <div class="image-div picture-frame-row" [style.width.px]="rowLandscapeSize.Width" [style.height.px]="rowLandscapeSize.Height" [ngStyle]="getLandscapeBackground()"></div><!--
+                    --><div class="image-div picture-frame-row" [style.width.px]="rowLandscapeSize.Width" [style.height.px]="rowLandscapeSize.Height" [ngStyle]="getLandscapeBackground()"></div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</ng-container>

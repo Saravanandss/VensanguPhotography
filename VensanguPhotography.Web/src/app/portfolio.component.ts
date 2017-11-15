@@ -59,7 +59,7 @@ export class PortfolioComponent implements OnInit {
     public getPortraitBackground = () => {        
         return {            
             'background-image' : 'url(' + this.portraitImageFiles[this.portraitIndex++] + ')'
-        };    
+        };
     }
 
     public getLandscapeBackground = () => {
@@ -84,8 +84,6 @@ export class PortfolioComponent implements OnInit {
     }
 
     private  loadImageFiles = async () => {
-        // this.portraitImageFiles = PORTRAITIMAGES;
-        // this.landscapeImageFiles = LANDSCAPEIMAGES;
         await this.portfolioService.getAllImages(this.route.data['value'].type)
             .then(images => {
                 console.log('images', images);
@@ -93,8 +91,129 @@ export class PortfolioComponent implements OnInit {
                 this.landscapeImageFiles = images.landscapes;
             })
             .catch(error => console.log(error));
+
+        //await this.loadFromConstants(this.route.data['value'].type);
+    }
+
+    private loadFromConstants = (type:string) : void => {
+        switch (type) {
+            case 'portfolio':
+                this.portraitImageFiles = PORTRAIT_PORTFOLIO;
+                this.landscapeImageFiles = LANDSCAPE_PORTFOLIO;
+                break;
+            case 'portrait':
+                this.portraitImageFiles = PORTRAIT_PORTRAIT;
+                this.landscapeImageFiles = LANDSCAPE_PORTRAIT;
+                break;
+            case 'family':
+                this.portraitImageFiles = PORTRAIT_FAMILY;
+                this.landscapeImageFiles = LANDSCAPE_FAMILY;
+                break;
+            case 'party':
+                this.portraitImageFiles = PORTRAIT_PARTY;
+                this.landscapeImageFiles = LANDSCAPE_PARTY;
+                break;            
+        }
     }
 }
+
+const PORTRAIT_PORTFOLIO: string[] = [
+    "assets/Portfolio/portrait/5.jpg",
+    "assets/Portfolio/portrait/6.jpg",
+    "assets/Portfolio/portrait/8.jpg",
+    "assets/Portfolio/portrait/9.jpg",
+    "assets/Portfolio/portrait/11.jpg",
+    "assets/Portfolio/portrait/13.jpg",
+    "assets/Portfolio/portrait/14.jpg",
+    "assets/Portfolio/portrait/27.jpg",
+    "assets/Portfolio/portrait/28.jpg",
+    "assets/Portfolio/portrait/29.jpg",
+    "assets/Portfolio/portrait/30.jpg",
+    "assets/Portfolio/portrait/31.jpg",
+    "assets/Portfolio/portrait/32.jpg",
+    "assets/Portfolio/portrait/33.jpg",
+    "assets/Portfolio/portrait/34.jpg",
+    "assets/Portfolio/portrait/35.jpg",
+]
+
+const LANDSCAPE_PORTFOLIO: string[] = [
+    "assets/Portfolio/landscape/7.jpg",
+    "assets/Portfolio/landscape/10.jpg",
+    "assets/Portfolio/landscape/12.jpg",
+    "assets/Portfolio/landscape/15.jpg",
+    "assets/Portfolio/landscape/16.jpg",
+    "assets/Portfolio/landscape/17.jpg",
+    "assets/Portfolio/landscape/18.jpg",
+    "assets/Portfolio/landscape/19.jpg",
+    "assets/Portfolio/landscape/20.jpg",
+    "assets/Portfolio/landscape/21.jpg",
+    "assets/Portfolio/landscape/22.jpg",
+    "assets/Portfolio/landscape/23.jpg",
+    "assets/Portfolio/landscape/24.jpg",
+    "assets/Portfolio/landscape/25.jpg",
+	//"assets/Portfolio/landscape/26.jpg"
+]
+
+const PORTRAIT_PORTRAIT: string[] = [
+    "assets/Portrait/portrait/5.jpg",
+    "assets/Portrait/portrait/6.jpg",
+    "assets/Portrait/portrait/8.jpg",
+    "assets/Portrait/portrait/9.jpg",
+    "assets/Portrait/portrait/11.jpg",
+    "assets/Portrait/portrait/13.jpg",
+    "assets/Portrait/portrait/14.jpg",
+    "assets/Portrait/portrait/28.jpg",
+    "assets/Portrait/portrait/30.jpg",
+    "assets/Portrait/portrait/31.jpg",
+    "assets/Portrait/portrait/33.jpg",
+    "assets/Portrait/portrait/35.jpg",
+]
+
+const LANDSCAPE_PORTRAIT: string[] = [
+    "assets/Portrait/landscape/1.jpg",
+    "assets/Portrait/landscape/16.jpg",
+    "assets/Portrait/landscape/18.jpg",
+    "assets/Portrait/landscape/20.jpg",
+]
+
+const PORTRAIT_PARTY: string[] = [
+    "assets/Party/portrait/6.jpg",
+    "assets/Party/portrait/27.jpg",
+    "assets/Party/portrait/28.jpg",
+    "assets/Party/portrait/29.jpg",
+    "assets/Party/portrait/30.jpg",
+    "assets/Party/portrait/31.jpg",
+    "assets/Party/portrait/32.jpg",
+    "assets/Party/portrait/35.jpg",
+]
+
+const LANDSCAPE_PARTY: string[] = [
+    "assets/Party/landscape/1.jpg",
+    "assets/Party/landscape/7.jpg",
+    "assets/Party/landscape/20.jpg",
+]
+
+const PORTRAIT_FAMILY: string[] = [
+    "assets/Family/portrait/8.jpg",
+    "assets/Family/portrait/9.jpg",
+    "assets/Family/portrait/11.jpg",
+    "assets/Family/portrait/14.jpg",
+    "assets/Family/portrait/27.jpg",
+    "assets/Family/portrait/29.jpg",
+    "assets/Family/portrait/30.jpg",
+    "assets/Family/portrait/31.jpg",
+    "assets/Family/portrait/32.jpg",
+    "assets/Family/portrait/33.jpg",
+    "assets/Family/portrait/34.jpg",
+    "assets/Family/portrait/35.jpg",
+]
+
+const LANDSCAPE_FAMILY: string[] = [
+    "assets/Family/landscape/1.jpg",
+    "assets/Family/landscape/16.jpg",
+    "assets/Family/landscape/18.jpg",
+]
+                    
 
 // const PORTRAITIMAGES: string[] = [
 //     //"assets/5.jpg",

@@ -3,6 +3,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   background-color: whitesmoke;
   color:#38383B;
+  overflow-y: scroll;
 }
 /* color palette: http://paletton.com/palette.php?uid=1470L0k1ZnV29aI2ehX1muw0oOV */
 .color-primary-0 { color: #7E7D84 }	/* Main Primary color */
