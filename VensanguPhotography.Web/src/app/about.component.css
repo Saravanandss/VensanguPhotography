@@ -1,22 +1,37 @@
-fieldset {
-    border:1px solid #a1a0a0;
-    border-radius: 4px;
-    max-width: 35vw;
+.image-para{
+    max-width: 30vw;
+    margin:auto;
 }
 
-legend {
-    border-bottom: 1px solid #a1a0a0;
-    border-radius: 8px;    
+aside{
+    max-width: 30vw;
+    margin: auto;
+    vertical-align: top;
+    margin-top: 5em;
 }
 
-fieldset.float-right{
-    align-content: right;
+fieldset{
+    border:1px solid #cecece;
+    border-radius: 5px;
 }
 
-fieldset.float-left{
-    align-content: left;
+legend{
+    font-weight: bold;
+    text-shadow: 4px 4px 8px #b1b0b0;
+    text-align: center;
 }
 
-div{
-    width:100vw;
+fieldset.contact-detail{
+    border: none;
+    text-align: center;
+}
+
+fieldset.contact-detail>legend{
+    font-weight: bold;
+    border-radius: 3px;
+    padding-bottom: -1px;
+}
+
+a{
+    color: black;
 }
