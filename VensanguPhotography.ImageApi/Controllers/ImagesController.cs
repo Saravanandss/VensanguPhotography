@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 using VensanguPhotography.ImageApi.Models;
 
 namespace VensanguPhotography.ImageApi.Controllers
 {
-    [Route("api/[controller]")]
+    [EnableCors("AllowLocalHost")]
+    [Route("/")]
     public class ImagesController : Controller
     {
         [HttpGet("{type}")]
@@ -20,9 +21,9 @@ namespace VensanguPhotography.ImageApi.Controllers
             var imagesModel = new ImagesModel
             {
                 Landscapes = Directory.GetFiles(path + @"\landscape", "*.jpg")
-                    .Select(p => "ImageApi/" + p.Replace("wwwroot\\", "").Replace('\\', '/')).ToArray(),
+                    .Select(p =>/* "ImageApi/" +*/ p.Replace("wwwroot\\", "").Replace('\\', '/')).ToArray(),
                 Portraits = Directory.GetFiles(path + @"\portrait", "*.jpg")
-                    .Select(p => "ImageApi/" + p.Replace("wwwroot\\", "").Replace('\\', '/')).ToArray()
+                    .Select(p => /*"ImageApi/" +*/ p.Replace("wwwroot\\", "").Replace('\\', '/')).ToArray()
             };
 
             return imagesModel;

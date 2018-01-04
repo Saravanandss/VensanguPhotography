@@ -7,11 +7,12 @@ import { AppRoutingModule } from './app-routing.module'
 import { PortfolioComponent } from './portfolio.component';
 import { PortfolioService } from './portfolio.service';
 import { AboutComponent } from './about.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     PortfolioComponent,
-    AboutComponent
+    AboutComponent    
   ],
   imports: [
     BrowserModule,

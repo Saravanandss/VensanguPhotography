@@ -1,0 +1,11 @@
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.Web\node_modules\selenium-webdriver\lib\test\data\html5\blue.jpg|92
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.Web\node_modules\selenium-webdriver\lib\test\data\html5\green.jpg|92
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.Web\node_modules\selenium-webdriver\lib\test\data\html5\red.jpg|92
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.Web\node_modules\selenium-webdriver\lib\test\data\html5\yellow.jpg|92
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.Web\node_modules\selenium-webdriver\lib\test\data\js\skins\lightgray\img\anchor.gif|53
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.Web\node_modules\selenium-webdriver\lib\test\data\js\skins\lightgray\img\object.gif|152
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.Web\node_modules\selenium-webdriver\lib\test\data\js\skins\lightgray\img\trans.gif|43
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.Web\node_modules\directory-encoder\test\directory-files\dog.png|1282
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.Web\node_modules\directory-encoder\test\files\bear copy.png|1282
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.Web\node_modules\webdriver-js-extender\node_modules\selenium-webdriver\lib\test\data\icon.gif|127
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.Web\node_modules\js-base64\1x1.png|68

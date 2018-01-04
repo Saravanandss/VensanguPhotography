@@ -10,7 +10,7 @@ aside{
     margin-top: 5em;
 }
 
-fieldset{
+fieldset.contact-container{
     border:1px solid #cecece;
     border-radius: 5px;
 }

@@ -4,6 +4,7 @@ import { ActivatedRoute, Route } from '@angular/router';
 import { PortfolioService } from './portfolio.service';
 import { Size } from './size';
 import { Images } from './Images';
+
 @Component({
     templateUrl: 'portfolio.components.html',
     styleUrls:['portfolio.component.css'],
@@ -23,8 +24,11 @@ export class PortfolioComponent implements OnInit {
     public colLandscapeSize: Size;
     private allowedSize: Size;
 
+    //TODO: Move this to configuration.
+    private imageApiUrl: string = "https://vensanguphotographyimageapi.azurewebsites.net";
+
     portraitIndex: number;
-     landscapeIndex: number;
+    landscapeIndex: number;
 
     ngOnInit(): void {
         this.calculateSizes();
@@ -57,24 +61,24 @@ export class PortfolioComponent implements OnInit {
     }
 
     public getPortraitBackground = () => {        
-        return {            
-            'background-image' : 'url(' + this.portraitImageFiles[this.portraitIndex++] + ')'
+         return {
+            'background-image' : 'url(' + this.imageApiUrl + '/' + this.portraitImageFiles[this.portraitIndex++] + ')'
         };
     }
 
     public getLandscapeBackground = () => {
         return {
-            'background-image' : 'url(' + this.landscapeImageFiles[this.landscapeIndex++] + ')'
+            'background-image' : 'url(' + this.imageApiUrl + '/' + this.landscapeImageFiles[this.landscapeIndex++] + ')'
         };
     }
 
     //Following conditions were used in *ngIf in the template in the div.block. But kept giving error saying the expression has changed after being checked.
     //Halting the idea till we figure out a solution.
-    public canRenderPortraitRow = ():boolean => {
+    public canRenderPortraitRow = () : boolean => {
         return this.portraitImageFiles.length > (this.portraitIndex + 3);
     }
 
-    public canRenderColumns = (): boolean => {
+    public canRenderColumns = () : boolean => {
         return this.portraitImageFiles.length > (this.portraitIndex + 3) && 
             this.landscapeImageFiles.length > (this.landscapeIndex + 6);
     }
@@ -92,6 +96,7 @@ export class PortfolioComponent implements OnInit {
             })
             .catch(error => console.log(error));
 
+        //For testing without the WebApi, comment the line above and uncomment the line below.
         //await this.loadFromConstants(this.route.data['value'].type);
     }
 
@@ -213,45 +218,3 @@ const LANDSCAPE_FAMILY: string[] = [
     "assets/Family/landscape/16.jpg",
     "assets/Family/landscape/18.jpg",
 ]
-                    
-
-// const PORTRAITIMAGES: string[] = [
-//     //"assets/5.jpg",
-//     "assets/6.jpg",
-//     "assets/8.jpg",
-//     "assets/9.jpg",
-//     "assets/11.jpg",
-//     "assets/13.jpg",
-//     "assets/14.jpg",
-//     "assets/27.jpg",
-//     "assets/28.jpg",
-//     "assets/29.jpg",
-//     "assets/30.jpg",
-//     "assets/31.jpg",
-//     "assets/32.jpg",
-//     "assets/33.jpg",
-//     "assets/34.jpg",
-//     "assets/35.jpg",
-// ]
-
-// const LANDSCAPEIMAGES: string[] = [
-//     // "assets/1.jpg",
-//     // "assets/2.jpg",
-//     // "assets/3.jpg",
-//     // "assets/4.jpg",
-//     "assets/7.jpg",
-//     "assets/10.jpg",
-//     "assets/12.jpg",
-//     "assets/15.jpg",
-//     "assets/16.jpg",
-//     "assets/17.jpg",
-//     "assets/18.jpg",
-//     "assets/19.jpg",
-//     "assets/20.jpg",
-//     "assets/21.jpg",
-//     "assets/22.jpg",
-//     "assets/23.jpg",
-//     "assets/24.jpg",
-//     "assets/25.jpg",
-// 	"assets/26.jpg"
-// ]

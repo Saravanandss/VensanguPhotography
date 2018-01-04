@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 
 export class AboutComponent
 {
-    private mailId = "mailto:saravanandss@gmail.com?Subject=Appointment Inquiry";
-    private phone = "tel:1-860-920-2363";
+    public mailId = "mailto:saravanandss@gmail.com?Subject=Appointment Inquiry";
+    public phone = "tel:1-860-920-2363";
 }
