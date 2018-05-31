@@ -39,8 +39,8 @@ namespace VensanguPhotography.ImageApi.Controllers
             
             var imagesModel = new ImagesModel
             {
-                Landscapes = landscapeImages.ToArray(),
-                Portraits = portraitImages.ToArray()
+                Landscapes = landscapeImages.Select(p => p.Replace("wwwroot\\", "").Replace('\\', '/')).ToArray(),
+                Portraits = portraitImages.Select(p => p.Replace("wwwroot\\", "").Replace('\\', '/')).ToArray()
             };
 
             return imagesModel;
