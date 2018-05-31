@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "VensanguPhotography.Web(1)", "VensanguPhotography.Web\", "{EB76A6A3-C915-4538-B959-2E2690C6CB8D}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -44,7 +44,10 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "dist", "VensanguPhotography
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "50771"
+		SlnRelativePath = "VensanguPhotography.Web\dist\"
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VensanguPhotography.ImageApi.UnitTest", "VensanguPhotography.ImageApi.UnitTest\VensanguPhotography.ImageApi.UnitTest.csproj", "{F5C2A9BE-605B-4858-8D2F-3F15401C3A96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,6 +67,10 @@ Global
 		{6A88F34D-A32D-41CE-A64F-A84DD25AB89A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A88F34D-A32D-41CE-A64F-A84DD25AB89A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{6A88F34D-A32D-41CE-A64F-A84DD25AB89A}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{F5C2A9BE-605B-4858-8D2F-3F15401C3A96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5C2A9BE-605B-4858-8D2F-3F15401C3A96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5C2A9BE-605B-4858-8D2F-3F15401C3A96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5C2A9BE-605B-4858-8D2F-3F15401C3A96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

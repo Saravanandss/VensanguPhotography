@@ -1,0 +1,16 @@
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi.UnitTest\obj\Release\netcoreapp2.0\VensanguPhotography.ImageApi.UnitTest.csproj.CoreCompileInputs.cache
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi.UnitTest\obj\Release\netcoreapp2.0\VensanguPhotography.ImageApi.UnitTest.AssemblyInfoInputs.cache
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi.UnitTest\obj\Release\netcoreapp2.0\VensanguPhotography.ImageApi.UnitTest.AssemblyInfo.cs
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi.UnitTest\bin\Release\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi.UnitTest\bin\Release\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi.UnitTest\bin\Release\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi.UnitTest\bin\Release\netcoreapp2.0\VensanguPhotography.ImageApi.UnitTest.deps.json
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi.UnitTest\bin\Release\netcoreapp2.0\VensanguPhotography.ImageApi.UnitTest.runtimeconfig.json
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi.UnitTest\bin\Release\netcoreapp2.0\VensanguPhotography.ImageApi.UnitTest.runtimeconfig.dev.json
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi.UnitTest\bin\Release\netcoreapp2.0\VensanguPhotography.ImageApi.UnitTest.dll
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi.UnitTest\bin\Release\netcoreapp2.0\VensanguPhotography.ImageApi.UnitTest.pdb
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi.UnitTest\obj\Release\netcoreapp2.0\VensanguPhotography.ImageApi.UnitTest.csprojResolveAssemblyReference.cache
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi.UnitTest\obj\Release\netcoreapp2.0\VensanguPhotography.ImageApi.UnitTest.dll
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi.UnitTest\obj\Release\netcoreapp2.0\VensanguPhotography.ImageApi.UnitTest.pdb
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi.UnitTest\bin\Release\netcoreapp2.0\VensanguPhotography.ImageApi.dll
+D:\Saravanan\My Projects\VensanguPhotography\VensanguPhotography.ImageApi.UnitTest\bin\Release\netcoreapp2.0\VensanguPhotography.ImageApi.pdb

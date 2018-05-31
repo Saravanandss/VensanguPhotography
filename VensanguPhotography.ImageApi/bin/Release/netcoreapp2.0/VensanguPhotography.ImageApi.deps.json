@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "a7aa306d2e264d92ffef06296341a5e29b6e41eb"
+    "signature": "85c0411e2ec9e947c23a30967030fdf66b49d448"
   },
   "compilationOptions": {
     "defines": [
@@ -23,6 +23,7 @@
     ".NETCoreApp,Version=v2.0": {
       "VensanguPhotography.ImageApi/1.0.0": {
         "dependencies": {
+          "Magick.NET-Q16-AnyCPU": "7.4.6",
           "Microsoft.AspNetCore.All": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0"
         },
@@ -70,6 +71,28 @@
             "rid": "win-x86",
             "assetType": "native"
           }
+        }
+      },
+      "Magick.NET-Q16-AnyCPU/7.4.6": {
+        "runtime": {
+          "lib/netstandard20/Magick.NET-Q16-AnyCPU.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/Magick.NET-Q16-x64.Native.dll.so": {
+            "rid": "linux-x64",
+            "assetType": "native"
+          },
+          "runtimes/win7-x64/native/Magick.NET-Q16-x64.Native.dll": {
+            "rid": "win7-x64",
+            "assetType": "native"
+          },
+          "runtimes/win7-x86/native/Magick.NET-Q16-x86.Native.dll": {
+            "rid": "win7-x86",
+            "assetType": "native"
+          }
+        },
+        "compile": {
+          "lib/netstandard20/Magick.NET-Q16-AnyCPU.dll": {}
         }
       },
       "Microsoft.ApplicationInsights/2.4.0": {
@@ -3984,6 +4007,13 @@
       "sha512": "sha512-GsCf4q+eyaI49rCPlgYxdxa1SQCysXFFdSJWdstrwxytg4+VPYLYrXD4AT2rjHVJ+UF7SSWX9CapWEYaU4ejVQ==",
       "path": "libuv/1.10.0",
       "hashPath": "libuv.1.10.0.nupkg.sha512"
+    },
+    "Magick.NET-Q16-AnyCPU/7.4.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MBaqW/iB3iax6R87HP7684EW4zIp1of/MszUurnzOPyRx0TqZOJFcth3nG84MFrJltR9XiUIaPPQU0MsNwX5lQ==",
+      "path": "magick.net-q16-anycpu/7.4.6",
+      "hashPath": "magick.net-q16-anycpu.7.4.6.nupkg.sha512"
     },
     "Microsoft.ApplicationInsights/2.4.0": {
       "type": "package",

@@ -42,6 +42,29 @@
           }
         }
       },
+      "Magick.NET-Q16-AnyCPU/7.4.6": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard20/Magick.NET-Q16-AnyCPU.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard20/Magick.NET-Q16-AnyCPU.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/Magick.NET-Q16-x64.Native.dll.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/win7-x64/native/Magick.NET-Q16-x64.Native.dll": {
+            "assetType": "native",
+            "rid": "win7-x64"
+          },
+          "runtimes/win7-x86/native/Magick.NET-Q16-x86.Native.dll": {
+            "assetType": "native",
+            "rid": "win7-x86"
+          }
+        }
+      },
       "Microsoft.ApplicationInsights/2.4.0": {
         "type": "package",
         "dependencies": {
@@ -4766,6 +4789,28 @@
         "runtimes/win-arm/native/libuv.dll",
         "runtimes/win-x64/native/libuv.dll",
         "runtimes/win-x86/native/libuv.dll"
+      ]
+    },
+    "Magick.NET-Q16-AnyCPU/7.4.6": {
+      "sha512": "MBaqW/iB3iax6R87HP7684EW4zIp1of/MszUurnzOPyRx0TqZOJFcth3nG84MFrJltR9XiUIaPPQU0MsNwX5lQ==",
+      "type": "package",
+      "path": "magick.net-q16-anycpu/7.4.6",
+      "files": [
+        "Copyright.txt",
+        "Readme.txt",
+        "lib/net20/Magick.NET-Q16-AnyCPU.dll",
+        "lib/net20/Magick.NET-Q16-AnyCPU.xml",
+        "lib/net40/Magick.NET-Q16-AnyCPU.dll",
+        "lib/net40/Magick.NET-Q16-AnyCPU.xml",
+        "lib/netstandard13/Magick.NET-Q16-AnyCPU.dll",
+        "lib/netstandard13/Magick.NET-Q16-AnyCPU.xml",
+        "lib/netstandard20/Magick.NET-Q16-AnyCPU.dll",
+        "lib/netstandard20/Magick.NET-Q16-AnyCPU.xml",
+        "magick.net-q16-anycpu.7.4.6.nupkg.sha512",
+        "magick.net-q16-anycpu.nuspec",
+        "runtimes/linux-x64/native/Magick.NET-Q16-x64.Native.dll.so",
+        "runtimes/win7-x64/native/Magick.NET-Q16-x64.Native.dll",
+        "runtimes/win7-x86/native/Magick.NET-Q16-x86.Native.dll"
       ]
     },
     "Microsoft.ApplicationInsights/2.4.0": {
@@ -12528,6 +12573,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "Magick.NET-Q16-AnyCPU >= 7.4.6",
       "Microsoft.AspNetCore.All >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0"
     ]
@@ -12579,6 +12625,10 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
+          "Magick.NET-Q16-AnyCPU": {
+            "target": "Package",
+            "version": "[7.4.6, )"
+          },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
             "version": "[2.0.0, )"

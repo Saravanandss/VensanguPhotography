@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using VensanguPhotography.ImageApi.Helpers;
 
 namespace VensanguPhotography.ImageApi
 {
@@ -25,6 +26,7 @@ namespace VensanguPhotography.ImageApi
                     .AllowAnyHeader()
                     .AllowAnyMethod();
             }));
+            services.AddTransient<IImageHelper, ImageHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

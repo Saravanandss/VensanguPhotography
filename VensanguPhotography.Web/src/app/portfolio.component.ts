@@ -14,8 +14,7 @@ import { Images } from './Images';
 export class PortfolioComponent implements OnInit {
     constructor(private route: ActivatedRoute, private portfolioService: PortfolioService){
         this.loadImageFiles();
-    }
-    
+    }    
 
     public portraitImageFiles: string[];
     public landscapeImageFiles: string[];
