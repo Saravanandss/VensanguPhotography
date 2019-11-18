@@ -1,20 +1,20 @@
 import { Component, HostListener, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Route } from '@angular/router';
 
-import { PortfolioService } from './portfolio.service';
-import { Size } from './size';
-import { Images } from './Images';
+import { PortfolioService } from '../services/portfolio.service';
+import { Size } from '../size';
+import { Images } from '../Images';
 
 @Component({
-    templateUrl: 'portfolio.components.html',
-    styleUrls:['portfolio.component.css'],
+    templateUrl: './portfolio.component.html',
+    styleUrls:['./portfolio.component.less'],
     providers: [PortfolioService]
 })
 
 export class PortfolioComponent implements OnInit {
     constructor(private route: ActivatedRoute, private portfolioService: PortfolioService){
         this.loadImageFiles();
-    }    
+    }
 
     public portraitImageFiles: string[];
     public landscapeImageFiles: string[];
