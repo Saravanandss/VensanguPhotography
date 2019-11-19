@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Images } from '../Images';
+import { config } from '../config';
 
 @Injectable()
 export class PortfolioService{
     constructor(private http: HttpClient){        
     }
-    //TODO: Move this to configuration.
-    private imageApiUrl: string = "https://vensanguphotographyimageapi.azurewebsites.net";
+
+    private imageApiUrl: string = config.imageApiUrl;
     
     public getAllImages = (type: string) : Promise<Images> => {
         console.log(type);

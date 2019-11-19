@@ -3,7 +3,7 @@ import { ActivatedRoute, Route } from '@angular/router';
 
 import { PortfolioService } from '../services/portfolio.service';
 import { Size } from '../size';
-import { Images } from '../Images';
+import { config } from '../config';
 
 @Component({
     templateUrl: './portfolio.component.html',
@@ -24,8 +24,7 @@ export class PortfolioComponent implements OnInit {
     public colLandscapeSize: Size;
     private allowedSize: Size;
 
-    //TODO: Move this to configuration.
-    private imageApiUrl: string = "https://vensanguphotographyimageapi.azurewebsites.net";
+    private imageApiUrl: string = config.imageApiUrl;
 
     portraitIndex: number;
     landscapeIndex: number;
