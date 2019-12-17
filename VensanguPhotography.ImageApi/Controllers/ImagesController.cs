@@ -23,9 +23,6 @@ namespace VensanguPhotography.ImageApi.Controllers
         [HttpGet("{type}")]
         public ImagesModel Get(string type)
         {
-            //var images = S3Helpers.GetImagesOfType(string type);
-            
-
             var path = $@"wwwroot\Images\{type}";
             if (!ImageHelper.DirectoryExists(path)) return null;
 
