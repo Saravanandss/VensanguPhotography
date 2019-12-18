@@ -1,6 +1,8 @@
 using Amazon.S3;
 using Amazon.S3.Model;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using VensanguPhotography.ImageApi.Helpers;
 
 namespace VensanguPhotography.ImageApi.Controllers
 {
@@ -9,16 +11,19 @@ namespace VensanguPhotography.ImageApi.Controllers
     {
         private readonly IAmazonS3 _s3Client;
         private readonly ListObjectsRequest _listObjectsRequest;
-        public MetadataController(IAmazonS3 s3Client, ListObjectsRequest listObjectsRequest)
+        private readonly IConfiguration configuration;
+
+        public MetadataController(IConfiguration configuration)
         {
-            this._listObjectsRequest = listObjectsRequest;
-            _s3Client = s3Client;
+            this.configuration = configuration;
         }
 
         [HttpGet]
         public void UpdateMetadata()
         {
-            var objectList = _s3Client.ListObjectsAsync(_listObjectsRequest);
+            var s3Helper = new S3Helpers(configuration);
+            var images = s3Helper.GetAllImages().Result;
+            
         }
     }
 }

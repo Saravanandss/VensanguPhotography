@@ -9,15 +9,23 @@ namespace VensanguPhotography.ImageApi.Models
         public class Image
         {
             public string Name { get; set; }
-            public ImageType Type { get; set; }
+            public Category Category { get; set; }
+            public Orientation Orientation {get; set;}
         }
     }
 
-    public enum ImageType
+    public enum Category
     {
         Portfolio,
         Portrait,
         Family,
         Outdoor
+    }
+
+    public enum Orientation
+    {
+        Unknown = 0,
+        Portrait = 1,
+        Landscape = 2 
     }
 }

@@ -1,13 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using VensanguPhotography.ImageApi.Helpers;
 using Amazon.S3;
-using Amazon.Extensions.NETCore.Setup;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
@@ -17,7 +13,12 @@ namespace VensanguPhotography.ImageApi
     {
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
-            Configuration = configuration;
+            var configBuilder = new ConfigurationBuilder()
+                .AddConfiguration(configuration)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+
+            Configuration = configBuilder.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -40,7 +41,6 @@ namespace VensanguPhotography.ImageApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -51,15 +51,7 @@ namespace VensanguPhotography.ImageApi
             }
 
             //app.UseStaticFiles();
-            //app.UseCors("AllowLocalHost");
-                        
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //        template: "{controller=Home}/{action=Index}/{id?}");
-            //});
-
+            app.UseCors("AllowLocalHost");
 
             if (env.IsDevelopment())
             {
@@ -67,11 +59,8 @@ namespace VensanguPhotography.ImageApi
             }
 
             app.UseHttpsRedirection();
-
-            //app.UseRouting();
-
+            app.UseRouting();
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
