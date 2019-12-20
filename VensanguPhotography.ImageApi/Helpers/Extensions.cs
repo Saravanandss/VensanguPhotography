@@ -11,7 +11,7 @@ namespace VensanguPhotography.ImageApi.Helpers
         public static Orientation GetOrientation(this IEnumerable<Tag> tags)
         {                
             Enum.TryParse(typeof(Orientation), 
-                tags.FirstOrDefault(t => t.Key.ToLower().Equals("orientation")).Value,
+                tags.FirstOrDefault(t => t.Key.ToLower().Equals("orientation"))?.Value,
                 out var value);
             return (Orientation) (value ?? 0);
         }
@@ -19,7 +19,7 @@ namespace VensanguPhotography.ImageApi.Helpers
         public static Category GetImageCategory(this IEnumerable<Tag> tags)
         {                
             Enum.TryParse(typeof(Category), 
-                tags.FirstOrDefault(t => t.Key.ToLower().Equals("category")).Value,
+                tags.FirstOrDefault(t => t.Key.ToLower().Equals("category"))?.Value,
                 out var value);
             return (Category) (value ?? 0);
         }
