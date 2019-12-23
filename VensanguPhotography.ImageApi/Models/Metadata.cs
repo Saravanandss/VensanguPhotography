@@ -5,13 +5,13 @@ namespace VensanguPhotography.ImageApi.Models
     public class Metadata
     {
         public IEnumerable<Image> Images { get; set; }
+    }
 
-        public class Image
-        {
-            public string Name { get; set; }
-            public Category Category { get; set; }
-            public Orientation Orientation {get; set;}
-        }
+    public class Image
+    {
+        public string Name { get; set; }
+        public Category Category { get; set; }
+        public Orientation Orientation { get; set; }
     }
 
     public enum Category

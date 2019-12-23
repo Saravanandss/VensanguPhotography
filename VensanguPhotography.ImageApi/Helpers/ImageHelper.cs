@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ImageMagick;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using ImageMagick;
 
 namespace VensanguPhotography.ImageApi.Helpers
 {

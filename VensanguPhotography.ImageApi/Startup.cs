@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Amazon.S3;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using VensanguPhotography.ImageApi.Helpers;
-using Amazon.S3;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using VensanguPhotography.ImageApi.Helpers;
 
 namespace VensanguPhotography.ImageApi
 {
@@ -35,6 +35,7 @@ namespace VensanguPhotography.ImageApi
                     .AllowAnyMethod();
             }));
             services.AddTransient<IImageHelper, ImageHelper>();
+            services.AddTransient<IS3Helper, S3Helper>();
             services.AddAWSService<IAmazonS3>();
         }
 

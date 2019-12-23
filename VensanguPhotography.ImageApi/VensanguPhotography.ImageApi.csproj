@@ -12,14 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AWSSDK.CloudFront" Version="3.3.101.82" />
-    <PackageReference Include="AWSSDK.CloudWatchLogs" Version="3.3.101.64" />
-    <PackageReference Include="AWSSDK.Core" Version="3.3.104.8" />
-    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.100.1" />
-    <PackageReference Include="AWSSDK.IdentityManagement" Version="3.3.104.15" />
-    <PackageReference Include="AWSSDK.Lambda" Version="3.3.106.8" />
-    <PackageReference Include="AWSSDK.SecurityToken" Version="3.3.104.12" />
-    <PackageReference Include="AWSSDK.S3" Version="3.3.110.4" />
     <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="7.14.5" />
     <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.100.1" />
   </ItemGroup>
@@ -28,4 +20,7 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VensanguPhotography.Core\VensanguPhotography.Core.csproj" />
+  </ItemGroup>
 </Project>

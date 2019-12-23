@@ -1,8 +1,8 @@
-using System.Collections.Generic;
 using Amazon.S3.Model;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using VensanguPhotography.ImageApi.Models;
-using System;
 
 namespace VensanguPhotography.ImageApi.Helpers
 {
