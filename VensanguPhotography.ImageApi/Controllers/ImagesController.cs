@@ -10,7 +10,7 @@ using VensanguPhotography.ImageApi.Models;
 namespace VensanguPhotography.ImageApi.Controllers
 {
     [EnableCors("AllowLocalHost")]
-    [Route("/")]
+    [Route("/images")]
     public class ImagesController : Controller
     {
         private readonly IS3Helper s3Helper;
@@ -25,7 +25,7 @@ namespace VensanguPhotography.ImageApi.Controllers
             this.configuration = configuration;
         }
 
-        [HttpGet("{type}")]
+        [HttpGet("{category}")]
         public ImagesModel Get(Category category)
         {
             var images = s3Helper.GetImagesOfCategory(category).Result;

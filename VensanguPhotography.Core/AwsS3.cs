@@ -62,7 +62,7 @@ namespace VensanguPhotography.Core
                 BucketName = bucketName,
                 Key = objectKey,
                 InputStream = inputStream
-            });
+            }).ConfigureAwait(false);
         }
     }
 }

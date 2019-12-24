@@ -64,7 +64,7 @@ namespace VensanguPhotography.ImageApi.Helpers
         {
             var metadataJson = JsonSerializer.Serialize(metadata);
             using var inputStream = new MemoryStream();
-            using var writer = new StreamWriter(inputStream);
+            var writer = new StreamWriter(inputStream);
             await writer.WriteAsync(metadataJson);
 
             var s3 = new AwsS3(configuration[BUCKETNAME], awsOptions);
