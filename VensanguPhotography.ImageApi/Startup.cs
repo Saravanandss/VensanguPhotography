@@ -28,13 +28,6 @@ namespace VensanguPhotography.ImageApi
         {           
 
             services.AddMvc();
-            services.AddCors(options => options.AddPolicy("AllowLocalHost", builder =>
-            {
-                builder.AllowAnyOrigin()
-                    .AllowAnyHeader()
-                    .AllowAnyMethod();
-            }));
-            services.AddTransient<IImageHelper, ImageHelper>();
             services.AddTransient<IS3Helper, S3Helper>();
             services.AddAWSService<IAmazonS3>();
         }
@@ -50,9 +43,6 @@ namespace VensanguPhotography.ImageApi
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
-            //app.UseStaticFiles();
-            app.UseCors("AllowLocalHost");
 
             if (env.IsDevelopment())
             {
