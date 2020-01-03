@@ -1,6 +1,11 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Amazon.Lambda.APIGatewayEvents;
+using Amazon.Lambda.Core;
+using Amazon.Lambda.RuntimeSupport;
+using Amazon.Lambda.Serialization.Json;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-
+using System;
+using System.Threading.Tasks;
 
 namespace VensanguPhotography.ImageApi
 {
@@ -8,7 +13,18 @@ namespace VensanguPhotography.ImageApi
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("AWS_LAMBDA_FUNCTION_NAME")))
+            {
+                CreateHostBuilder(args).Build().Run();
+            }
+            else
+            {
+                var lambdaEntryPoint = new LambdaEntryPoint();
+                var functionHandler = (Func<APIGatewayProxyRequest, ILambdaContext, Task<APIGatewayProxyResponse>>)lambdaEntryPoint.FunctionHandlerAsync;
+                using var handlerWrapper = HandlerWrapper.GetHandlerWrapper(functionHandler, new JsonSerializer());
+                using var bootstrap = new LambdaBootstrap(handlerWrapper);
+                bootstrap.RunAsync().Wait();
+            }
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

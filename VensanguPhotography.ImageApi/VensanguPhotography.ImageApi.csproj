@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AWSProjectType>Lambda</AWSProjectType>
+    <!--<AssemblyName>bootstrap</AssemblyName>-->
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Amazon.Lambda.AspNetCoreServer" Version="4.1.0" />
+    <PackageReference Include="Amazon.Lambda.RuntimeSupport" Version="1.1.0" />
     <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.100.1" />
   </ItemGroup>
 

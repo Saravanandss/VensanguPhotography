@@ -27,9 +27,9 @@ namespace VensanguPhotography.ImageApi
         public void ConfigureServices(IServiceCollection services)
         {           
 
-            services.AddMvc();
-            services.AddTransient<IS3Helper, S3Helper>();
-            services.AddAWSService<IAmazonS3>();
+            services.AddTransient<IS3Helper, S3Helper>()
+                .AddAWSService<IAmazonS3>()
+                .AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
