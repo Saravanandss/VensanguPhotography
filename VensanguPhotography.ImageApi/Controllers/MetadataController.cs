@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
+using System;
 using VensanguPhotography.ImageApi.Helpers;
 using VensanguPhotography.ImageApi.Models;
 
 namespace VensanguPhotography.ImageApi.Controllers
 {
     [Route("/metaupdate")]
-    public class MetadataController : Controller
+    [ApiController]
+    public class MetadataController : ControllerBase
     {
         private readonly IS3Helper s3Helper;
 
@@ -17,12 +19,19 @@ namespace VensanguPhotography.ImageApi.Controllers
         [HttpGet]
         public void UpdateMetadata()
         {
-            var metadata = new Metadata
+            try
             {
-                Images = s3Helper.GetAllImages().Result
-            };
-            
-            s3Helper.UpdateMetadata(metadata);
+                var metadata = new Metadata
+                {
+                    Images = s3Helper.GetAllImages().Result
+                };
+
+                s3Helper.UpdateMetadata(metadata);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error while pdating metadata" + ex.Message);
+            }          
         }
 
         public JsonResult ToJson(Metadata metadata)

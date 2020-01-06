@@ -15,6 +15,7 @@ namespace VensanguPhotography.ImageApi
         {
             var configBuilder = new ConfigurationBuilder()
                 .AddConfiguration(configuration)
+                .AddEnvironmentVariables()
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
@@ -25,8 +26,7 @@ namespace VensanguPhotography.ImageApi
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {           
-
+        {
             services.AddTransient<IS3Helper, S3Helper>()
                 .AddAWSService<IAmazonS3>()
                 .AddMvc();

@@ -1,5 +1,6 @@
 using Amazon.Extensions.NETCore.Setup;
 using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,10 @@ namespace VensanguPhotography.ImageApi.Helpers
 
         public async Task<IEnumerable<Image>> GetAllImages()
         {
+            if (!IsValidBucketName()) return null;
+
+            Console.WriteLine("Bucket Name: " +  configuration[BUCKETNAME]);
+
             var s3 = new AwsS3(configuration[BUCKETNAME], awsOptions);
             var s3Objects = await s3.GetObjectsList();
 
@@ -48,11 +53,13 @@ namespace VensanguPhotography.ImageApi.Helpers
         public async Task<IEnumerable<Image>> GetImagesOfCategory(Category category)
         {
             var images = await GetAllImages();
-            return images.Where(image => image.Category == category);
+            return images?.Where(image => image.Category == category);
         }
 
         public async Task<Metadata> ReadMetadata()
         {
+            if (!IsValidBucketName()) return null;
+
             var s3 = new AwsS3(configuration[BUCKETNAME], awsOptions);
             var getMetadataStream = await s3.ReadObject(IMAGEMETADATA);
 
@@ -62,6 +69,8 @@ namespace VensanguPhotography.ImageApi.Helpers
 
         public async void UpdateMetadata(Metadata metadata)
         {
+            if (!IsValidBucketName()) return;
+
             var metadataJson = JsonSerializer.Serialize(metadata);
             using var inputStream = new MemoryStream();
             var writer = new StreamWriter(inputStream);
@@ -70,5 +79,7 @@ namespace VensanguPhotography.ImageApi.Helpers
             var s3 = new AwsS3(configuration[BUCKETNAME], awsOptions);
             await s3.WriteObject(IMAGEMETADATA, inputStream);
         }
+
+        public bool IsValidBucketName() => string.IsNullOrEmpty(configuration[BUCKETNAME]) ? false : true;
     }
 }
