@@ -15,13 +15,15 @@ namespace VensanguPhotography.ImageApi.Helpers
     {
         private readonly AWSOptions awsOptions;
         private readonly IConfiguration configuration;
-        private const string IMAGEMETADATA = "ImageMetadata.json";
+        private readonly string ImageMetadataFile;
+        private readonly string METADATAFILE = "MetaFileName";
         private const string BUCKETNAME = "BucketName";
 
         public S3Helper(IConfiguration configuration)
         {
             this.awsOptions = configuration.GetAWSOptions();
             this.configuration = configuration;
+            this.ImageMetadataFile = configuration[METADATAFILE];
         }
 
         public async Task<IEnumerable<Image>> GetAllImages()
@@ -61,7 +63,7 @@ namespace VensanguPhotography.ImageApi.Helpers
             if (!IsValidBucketName()) return null;
 
             var s3 = new AwsS3(configuration[BUCKETNAME], awsOptions);
-            var getMetadataStream = await s3.ReadObject(IMAGEMETADATA);
+            var getMetadataStream = await s3.ReadObject(ImageMetadataFile);
 
             using var stringReader = new StreamReader(getMetadataStream);
             return JsonSerializer.Deserialize<Metadata>(stringReader.ReadToEnd());
@@ -77,7 +79,7 @@ namespace VensanguPhotography.ImageApi.Helpers
             await writer.WriteAsync(metadataJson);
 
             var s3 = new AwsS3(configuration[BUCKETNAME], awsOptions);
-            await s3.WriteObject(IMAGEMETADATA, inputStream);
+            await s3.WriteObject(ImageMetadataFile, inputStream);
         }
 
         public bool IsValidBucketName() => string.IsNullOrEmpty(configuration[BUCKETNAME]) ? false : true;

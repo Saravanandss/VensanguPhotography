@@ -58,3 +58,4 @@ obj/
 *.log
 
 packages/
+**/appsettings.Development.json

@@ -14,7 +14,7 @@ namespace VensanguPhotography.ImageApi.Controllers
         [HttpGet]
         public JsonResult Get()
         {
-            return new JsonResult(new { Message = "Welcome to Image Controller" });
+            return new JsonResult(new { Message = "Welcome to Image Api" });
         }
 
     }
