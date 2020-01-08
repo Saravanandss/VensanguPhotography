@@ -1,9 +1,10 @@
-import { Component, HostListener, OnInit, AfterViewInit } from '@angular/core';
+import { Component, HostListener, OnInit, AfterViewInit, Inject } from '@angular/core';
 import { ActivatedRoute, Route } from '@angular/router';
 
 import { PortfolioService } from '../services/portfolio.service';
 import { Size } from '../size';
 import { config } from '../config';
+import { WINDOW } from '@ng-toolkit/universal';
 
 @Component({
     templateUrl: './portfolio.component.html',
@@ -12,7 +13,7 @@ import { config } from '../config';
 })
 
 export class PortfolioComponent implements OnInit {
-    constructor(private route: ActivatedRoute, private portfolioService: PortfolioService){
+    constructor(@Inject(WINDOW) private window: Window, private route: ActivatedRoute, private portfolioService: PortfolioService){
         this.loadImageFiles();
     }
 
