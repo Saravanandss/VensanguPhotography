@@ -1,81 +1,64 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "VensanguPhotography.Web(1)", "VensanguPhotography.Web\", "{EB76A6A3-C915-4538-B959-2E2690C6CB8D}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_56900"
-		Debug.AspNetCompiler.PhysicalPath = "VensanguPhotography.Web\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56900\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_56900"
-		Release.AspNetCompiler.PhysicalPath = "VensanguPhotography.Web\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56900\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "56900"
-		SlnRelativePath = "VensanguPhotography.Web\"
-	EndProjectSection
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VensanguPhotography.ImageApi", "VensanguPhotography.ImageApi\VensanguPhotography.ImageApi.csproj", "{F70CD213-23A8-40A2-8133-ADD51A5D992C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VensanguPhotography.ImageApi", "VensanguPhotography.ImageApi\VensanguPhotography.ImageApi.csproj", "{0B25E8AC-0B20-420F-AF9E-9077E8F8D8BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VensanguPhotography.ImageApi.UnitTest", "VensanguPhotography.ImageApi.UnitTest\VensanguPhotography.ImageApi.UnitTest.csproj", "{0CD971A0-31F6-4ACF-BF0F-F5441212BBEC}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "dist", "VensanguPhotography.Web\dist\", "{6A88F34D-A32D-41CE-A64F-A84DD25AB89A}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_50771"
-		Debug.AspNetCompiler.PhysicalPath = "VensanguPhotography.Web\dist\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50771\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_50771"
-		Release.AspNetCompiler.PhysicalPath = "VensanguPhotography.Web\dist\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50771\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "50771"
-		SlnRelativePath = "VensanguPhotography.Web\dist\"
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VensanguPhotography.ImageApi.UnitTest", "VensanguPhotography.ImageApi.UnitTest\VensanguPhotography.ImageApi.UnitTest.csproj", "{F5C2A9BE-605B-4858-8D2F-3F15401C3A96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VensanguPhotography.Core", "VensanguPhotography.Core\VensanguPhotography.Core.csproj", "{20EEC78A-3D3F-4E02-B5B3-F62D488287CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EB76A6A3-C915-4538-B959-2E2690C6CB8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB76A6A3-C915-4538-B959-2E2690C6CB8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB76A6A3-C915-4538-B959-2E2690C6CB8D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB76A6A3-C915-4538-B959-2E2690C6CB8D}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{0B25E8AC-0B20-420F-AF9E-9077E8F8D8BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B25E8AC-0B20-420F-AF9E-9077E8F8D8BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B25E8AC-0B20-420F-AF9E-9077E8F8D8BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B25E8AC-0B20-420F-AF9E-9077E8F8D8BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A88F34D-A32D-41CE-A64F-A84DD25AB89A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A88F34D-A32D-41CE-A64F-A84DD25AB89A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A88F34D-A32D-41CE-A64F-A84DD25AB89A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A88F34D-A32D-41CE-A64F-A84DD25AB89A}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{F5C2A9BE-605B-4858-8D2F-3F15401C3A96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F5C2A9BE-605B-4858-8D2F-3F15401C3A96}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F5C2A9BE-605B-4858-8D2F-3F15401C3A96}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F5C2A9BE-605B-4858-8D2F-3F15401C3A96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F70CD213-23A8-40A2-8133-ADD51A5D992C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F70CD213-23A8-40A2-8133-ADD51A5D992C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F70CD213-23A8-40A2-8133-ADD51A5D992C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F70CD213-23A8-40A2-8133-ADD51A5D992C}.Debug|x64.Build.0 = Debug|Any CPU
+		{F70CD213-23A8-40A2-8133-ADD51A5D992C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F70CD213-23A8-40A2-8133-ADD51A5D992C}.Debug|x86.Build.0 = Debug|Any CPU
+		{F70CD213-23A8-40A2-8133-ADD51A5D992C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F70CD213-23A8-40A2-8133-ADD51A5D992C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F70CD213-23A8-40A2-8133-ADD51A5D992C}.Release|x64.ActiveCfg = Release|Any CPU
+		{F70CD213-23A8-40A2-8133-ADD51A5D992C}.Release|x64.Build.0 = Release|Any CPU
+		{F70CD213-23A8-40A2-8133-ADD51A5D992C}.Release|x86.ActiveCfg = Release|Any CPU
+		{F70CD213-23A8-40A2-8133-ADD51A5D992C}.Release|x86.Build.0 = Release|Any CPU
+		{0CD971A0-31F6-4ACF-BF0F-F5441212BBEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CD971A0-31F6-4ACF-BF0F-F5441212BBEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CD971A0-31F6-4ACF-BF0F-F5441212BBEC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0CD971A0-31F6-4ACF-BF0F-F5441212BBEC}.Debug|x64.Build.0 = Debug|Any CPU
+		{0CD971A0-31F6-4ACF-BF0F-F5441212BBEC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0CD971A0-31F6-4ACF-BF0F-F5441212BBEC}.Debug|x86.Build.0 = Debug|Any CPU
+		{0CD971A0-31F6-4ACF-BF0F-F5441212BBEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CD971A0-31F6-4ACF-BF0F-F5441212BBEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CD971A0-31F6-4ACF-BF0F-F5441212BBEC}.Release|x64.ActiveCfg = Release|Any CPU
+		{0CD971A0-31F6-4ACF-BF0F-F5441212BBEC}.Release|x64.Build.0 = Release|Any CPU
+		{0CD971A0-31F6-4ACF-BF0F-F5441212BBEC}.Release|x86.ActiveCfg = Release|Any CPU
+		{0CD971A0-31F6-4ACF-BF0F-F5441212BBEC}.Release|x86.Build.0 = Release|Any CPU
+		{20EEC78A-3D3F-4E02-B5B3-F62D488287CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20EEC78A-3D3F-4E02-B5B3-F62D488287CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20EEC78A-3D3F-4E02-B5B3-F62D488287CC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{20EEC78A-3D3F-4E02-B5B3-F62D488287CC}.Debug|x64.Build.0 = Debug|Any CPU
+		{20EEC78A-3D3F-4E02-B5B3-F62D488287CC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{20EEC78A-3D3F-4E02-B5B3-F62D488287CC}.Debug|x86.Build.0 = Debug|Any CPU
+		{20EEC78A-3D3F-4E02-B5B3-F62D488287CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20EEC78A-3D3F-4E02-B5B3-F62D488287CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20EEC78A-3D3F-4E02-B5B3-F62D488287CC}.Release|x64.ActiveCfg = Release|Any CPU
+		{20EEC78A-3D3F-4E02-B5B3-F62D488287CC}.Release|x64.Build.0 = Release|Any CPU
+		{20EEC78A-3D3F-4E02-B5B3-F62D488287CC}.Release|x86.ActiveCfg = Release|Any CPU
+		{20EEC78A-3D3F-4E02-B5B3-F62D488287CC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6433CFFE-4306-48B1-9277-A3661738CEB0}
+		SolutionGuid = {0D4DF9BC-37F0-4A03-A0F9-7F5744889173}
 	EndGlobalSection
 EndGlobal

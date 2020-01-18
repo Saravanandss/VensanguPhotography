@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AboutComponent } from './about/about.component';
 import { PortfolioService } from './services/portfolio.service';
+import { CommonModule } from '@angular/common';
+import { TransferHttpCacheModule } from '@nguniversal/common';
+import { NgtUniversalModule } from '@ng-toolkit/universal';
 
 @NgModule({
   declarations: [
@@ -15,9 +18,12 @@ import { PortfolioService } from './services/portfolio.service';
     AboutComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    HttpClientModule    
+    HttpClientModule,
+    CommonModule,
+    TransferHttpCacheModule,
+    NgtUniversalModule    
   ],
   providers: [PortfolioService],
   bootstrap: [AppComponent]
