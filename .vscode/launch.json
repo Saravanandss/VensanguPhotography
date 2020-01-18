@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceRoot}/VensanguPhotography.ImageApi/bin/Debug/netcoreapp1.1/VensanguPhotography.ImageApi.dll",
+            "program": "${workspaceRoot}/VensanguPhotography.ImageApi/bin/Debug/netcoreapp3.0/VensanguPhotography.ImageApi.dll",
             "args": [],
             "cwd": "${workspaceRoot}/VensanguPhotography.ImageApi",
             "stopAtEntry": false,
