@@ -1,49 +1,48 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Cors;
-using VensanguPhotography.ImageApi.Models;
 using VensanguPhotography.ImageApi.Helpers;
+using VensanguPhotography.ImageApi.Models;
 
 namespace VensanguPhotography.ImageApi.Controllers
 {
-    [EnableCors("AllowLocalHost")]
-    [Route("/")]
-    public class ImagesController : Controller
+    [Route("/images")]
+    [ApiController]
+    public class ImagesController : ControllerBase
     {
-        public IImageHelper ImageHelper { get;  }
-        
-        public ImagesController(IImageHelper imageHelper)
+        private readonly IS3Helper s3Helper;
+        private readonly IConfiguration configuration;
+
+        public ImagesController(IS3Helper s3Helper, IConfiguration configuration)
         {
-            ImageHelper = imageHelper;
+            this.s3Helper = s3Helper;
+            this.configuration = configuration;
         }
 
-        [HttpGet("{type}")]
-        public ImagesModel Get(string type)
+        [HttpGet("{category}")]
+        public ImagesModel Get(Category category)
         {
-            var path = $@"wwwroot\Images\{type}";
-            if (!ImageHelper.DirectoryExists(path)) return null;
-
-            var fileNames = ImageHelper.GetAllFiles(path);
-            var landscapeImages = new List<string>();
-            var portraitImages = new List<string>();
-            foreach (var fileName in fileNames)
+            try
             {
-                if (ImageHelper.IsPortrait(fileName))
-                    portraitImages.Add(fileName);
-                else
-                    landscapeImages.Add(fileName);
+                var images = s3Helper.GetImagesOfCategory(category).Result;
+
+                return new ImagesModel
+                {
+                    Landscapes = GetImageUrls(images, Orientation.Landscape) ?? new string[] { },
+                    Portraits = GetImageUrls(images, Orientation.Portrait) ?? new string[] { }
+                };
             }
-            
-            var imagesModel = new ImagesModel
+            catch (Exception ex)
             {
-                Landscapes = landscapeImages.Select(p => p.Replace("wwwroot\\", "").Replace('\\', '/')).ToArray(),
-                Portraits = portraitImages.Select(p => p.Replace("wwwroot\\", "").Replace('\\', '/')).ToArray()
-            };
+                Console.WriteLine("Error during images/category get" + ex.Message);
+            }
 
-            return imagesModel;
+            return null;
         }
+
+        private string[] GetImageUrls(IEnumerable<Image> images, Orientation orientation) =>
+            images?.Where(image => image.Orientation == orientation).Select(image => $"{configuration["cloudFrontUrl"]}{image.Name}").ToArray();
     }
 }
