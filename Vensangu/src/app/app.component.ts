@@ -25,9 +25,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     const mainContainer = <HTMLCanvasElement>document.getElementById('main-container');
-    var renderer = new ImageRenderer();
-    renderer.bootstrapScene(mainContainer);
-    renderer.renderCenterImage("portfolio", this.images[0]);
-    renderer.renderImageCluster("portfolio", this.images.slice(1, this.images.length));
+    var renderer = new ImageRenderer(mainContainer);
+    renderer.renderImages("portfolio", this.images);
   }
 }
