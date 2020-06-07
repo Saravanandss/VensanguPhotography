@@ -95,7 +95,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "/Users/adhirai/Programming/VensanguPhotography/VensanguPhotography.ImageApi/VensanguPhotography.ImageApi.csproj",
-        "projectName": "bootstrap",
+        "projectName": "VensanguPhotography.ImageApi",
         "projectPath": "/Users/adhirai/Programming/VensanguPhotography/VensanguPhotography.ImageApi/VensanguPhotography.ImageApi.csproj",
         "packagesPath": "/Users/adhirai/.nuget/packages/",
         "outputPath": "/Users/adhirai/Programming/VensanguPhotography/VensanguPhotography.ImageApi/obj/",
@@ -107,13 +107,13 @@
           "/Users/adhirai/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.0"
+          "netcoreapp3.1"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.0": {
+          "netcoreapp3.1": {
             "projectReferences": {
               "/Users/adhirai/Programming/VensanguPhotography/VensanguPhotography.Core/VensanguPhotography.Core.csproj": {
                 "projectPath": "/Users/adhirai/Programming/VensanguPhotography/VensanguPhotography.Core/VensanguPhotography.Core.csproj"
@@ -128,37 +128,19 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.0": {
+        "netcoreapp3.1": {
           "dependencies": {
             "AWSSDK.Extensions.NETCore.Setup": {
               "target": "Package",
               "version": "[3.3.100.1, )"
             },
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[3.3.110.62, )"
+            },
             "Amazon.Lambda.AspNetCoreServer": {
               "target": "Package",
-              "version": "[4.1.0, )"
-            },
-            "Amazon.Lambda.RuntimeSupport": {
-              "target": "Package",
-              "version": "[1.1.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[3.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.0.0, )"
-            },
-            "Microsoft.Extensions.Logging.Debug": {
-              "target": "Package",
-              "version": "[3.0.0, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[5.1.1, )"
             }
           },
           "imports": [

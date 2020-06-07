@@ -5,7 +5,7 @@ using VensanguPhotography.ImageApi.Models;
 
 namespace VensanguPhotography.ImageApi.Controllers
 {
-    [Route("/metaupdate")]
+    [Route("api/[controller]")]
     [ApiController]
     public class MetadataController : ControllerBase
     {

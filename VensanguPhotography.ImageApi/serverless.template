@@ -2,14 +2,45 @@
   "AWSTemplateFormatVersion": "2010-09-09",
   "Transform": "AWS::Serverless-2016-10-31",
   "Description": "An AWS Serverless Application that uses the ASP.NET Core framework running in Amazon Lambda.",
-  "Parameters": {},
-  "Conditions": {},
+  "Parameters": {
+    "ShouldCreateBucket": {
+      "Type": "String",
+      "AllowedValues": [
+        "true",
+        "false"
+      ],
+      "Description": "If true then the S3 bucket that will be proxied will be created with the CloudFormation stack."
+    },
+    "BucketName": {
+      "Type": "String",
+      "Description": "Name of S3 bucket that will be proxied. If left blank a name will be generated.",
+      "MinLength": "0"
+    }
+  },
+  "Conditions": {
+    "CreateS3Bucket": {
+      "Fn::Equals": [
+        {
+          "Ref": "ShouldCreateBucket"
+        },
+        "true"
+      ]
+    },
+    "BucketNameGenerated": {
+      "Fn::Equals": [
+        {
+          "Ref": "BucketName"
+        },
+        ""
+      ]
+    }
+  },
   "Resources": {
     "AspNetCoreFunction": {
       "Type": "AWS::Serverless::Function",
       "Properties": {
-        "Handler": "not-required",
-        "Runtime": "provided",
+        "Handler": "VensanguPhotography.ImageApi::VensanguPhotography.ImageApi.LambdaEntryPoint::FunctionHandlerAsync",
+        "Runtime": "dotnetcore3.1",
         "CodeUri": "",
         "MemorySize": 256,
         "Timeout": 30,
@@ -19,7 +50,17 @@
         ],
         "Environment": {
           "Variables": {
-            "LAMBDA_NET_SERIALIZER_DEBUG": "true"
+            "AppS3Bucket": {
+              "Fn::If": [
+                "CreateS3Bucket",
+                {
+                  "Ref": "Bucket"
+                },
+                {
+                  "Ref": "BucketName"
+                }
+              ]
+            }
           }
         },
         "Events": {
@@ -39,6 +80,23 @@
           }
         }
       }
+    },
+    "Bucket": {
+      "Type": "AWS::S3::Bucket",
+      "Condition": "CreateS3Bucket",
+      "Properties": {
+        "BucketName": {
+          "Fn::If": [
+            "BucketNameGenerated",
+            {
+              "Ref": "AWS::NoValue"
+            },
+            {
+              "Ref": "BucketName"
+            }
+          ]
+        }
+      }
     }
   },
   "Outputs": {
@@ -46,6 +104,19 @@
       "Description": "API endpoint URL for Prod environment",
       "Value": {
         "Fn::Sub": "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+      }
+    },
+    "S3ProxyBucket": {
+      "Value": {
+        "Fn::If": [
+          "CreateS3Bucket",
+          {
+            "Ref": "Bucket"
+          },
+          {
+            "Ref": "BucketName"
+          }
+        ]
       }
     }
   }

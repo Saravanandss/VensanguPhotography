@@ -8,7 +8,7 @@ using VensanguPhotography.ImageApi.Models;
 
 namespace VensanguPhotography.ImageApi.Controllers
 {
-    [Route("/images")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ImagesController : ControllerBase
     {
@@ -34,9 +34,9 @@ namespace VensanguPhotography.ImageApi.Controllers
                     Portraits = GetImageUrls(images, Orientation.Portrait) ?? new string[] { }
                 };
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine("Error during images/category get" + ex.Message);
+                Console.WriteLine($"Error while gettting images category {category}. \n ex.Message");
             }
 
             return null;
