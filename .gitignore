@@ -1,3 +1,5 @@
 [Oo]bj/
 bin/
 .vs/
+appsettings.Development.json
+*-lock.json
