@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Threading.Tasks;
 using VensanguPhotography.ImageApi.Helpers;
 using VensanguPhotography.ImageApi.Models;
 
@@ -16,14 +17,14 @@ namespace VensanguPhotography.ImageApi.Controllers
             this.s3Helper = s3Helper;
         }
 
-        [HttpGet]
+        [HttpPost]
         public void UpdateMetadata()
         {
             try
             {
                 var metadata = new Metadata
                 {
-                    Images = s3Helper.GetAllImages().Result
+                    Images = s3Helper.GetImages().Result
                 };
 
                 s3Helper.UpdateMetadata(metadata);
@@ -31,8 +32,11 @@ namespace VensanguPhotography.ImageApi.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine("Error while pdating metadata" + ex.Message);
-            }          
+            }
         }
+
+        [HttpGet]
+        public async Task<Metadata> GetMetadata() => await s3Helper.ReadMetadata();
 
         public JsonResult ToJson(Metadata metadata)
         {

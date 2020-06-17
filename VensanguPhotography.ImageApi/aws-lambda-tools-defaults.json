@@ -11,5 +11,5 @@
   "framework": "netcoreapp3.1",
   "s3-prefix": "VensanguPhotography.ImageApi/",
   "template": "serverless.template",
-  "template-parameters": "ShouldCreateBucket=true;BucketName=vensangu-code"
+  "template-parameters": "ShouldCreateBucket=false;BucketName=vensangu-code"
 }

@@ -26,7 +26,7 @@ namespace VensanguPhotography.ImageApi.Helpers
             this.ImageMetadataFile = configuration[METADATAFILE];
         }
 
-        public async Task<IEnumerable<Image>> GetAllImages()
+        public async Task<IEnumerable<Image>> GetImages()
         {
             if (!IsValidBucketName()) return null;
 
@@ -52,9 +52,9 @@ namespace VensanguPhotography.ImageApi.Helpers
             return images;
         }
 
-        public async Task<IEnumerable<Image>> GetImagesOfCategory(Category category)
-        {
-            var images = await GetAllImages();
+        public async Task<IEnumerable<Image>> GetImages(Category category)
+        {   
+            var images = await GetImages();
             return images?.Where(image => image.Category == category);
         }
 
@@ -74,9 +74,10 @@ namespace VensanguPhotography.ImageApi.Helpers
             if (!IsValidBucketName()) return;
 
             var metadataJson = JsonSerializer.Serialize(metadata);
-            using var inputStream = new MemoryStream();
-            var writer = new StreamWriter(inputStream);
+            using var inputStream = new MemoryStream(2048);
+            using var writer = new StreamWriter(inputStream);
             await writer.WriteAsync(metadataJson);
+            await writer.FlushAsync();
 
             var s3 = new AwsS3(configuration[BUCKETNAME], awsOptions);
             await s3.WriteObject(ImageMetadataFile, inputStream);
