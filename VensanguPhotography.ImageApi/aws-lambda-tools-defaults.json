@@ -8,11 +8,9 @@
   "profile": "default",
   "region": "us-east-2",
   "configuration": "Release",
-  "s3-prefix": "vensangu-imageApi/",
-  "template": "serverless.template",
-  "template-parameters": "",
-  "msbuild-parameters": "--self-contained true",
-  "framework": "netcoreapp3.0",
+  "framework": "netcoreapp3.1",
+  "s3-prefix": "VensanguPhotography.ImageApi/",
   "s3-bucket": "vensangu-code",
-  "stack-name": "vensangu-imageApi"
+  "template": "serverless.template",
+  "template-parameters": "ShouldCreateBucket=false;BucketName=vensangu-code"
 }

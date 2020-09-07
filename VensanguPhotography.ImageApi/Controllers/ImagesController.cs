@@ -3,12 +3,13 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using VensanguPhotography.ImageApi.Helpers;
 using VensanguPhotography.ImageApi.Models;
 
 namespace VensanguPhotography.ImageApi.Controllers
 {
-    [Route("/images")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ImagesController : ControllerBase
     {
@@ -22,27 +23,27 @@ namespace VensanguPhotography.ImageApi.Controllers
         }
 
         [HttpGet("{category}")]
-        public ImagesModel Get(Category category)
+        public async Task<ImagesModel> Get(Category category)
         {
             try
             {
-                var images = s3Helper.GetImagesOfCategory(category).Result;
+                var images = await s3Helper.GetImages(category);
 
                 return new ImagesModel
                 {
-                    Landscapes = GetImageUrls(images, Orientation.Landscape) ?? new string[] { },
-                    Portraits = GetImageUrls(images, Orientation.Portrait) ?? new string[] { }
+                    Landscapes = ComposeImageUrls(images, Orientation.Landscape) ?? new string[] { },
+                    Portraits = ComposeImageUrls(images, Orientation.Portrait) ?? new string[] { }
                 };
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine("Error during images/category get" + ex.Message);
+                Console.WriteLine($"Error while gettting images category {category}. \n ex.Message");
             }
 
             return null;
         }
 
-        private string[] GetImageUrls(IEnumerable<Image> images, Orientation orientation) =>
+        private string[] ComposeImageUrls(IEnumerable<Image> images, Orientation orientation) =>
             images?.Where(image => image.Orientation == orientation).Select(image => $"{configuration["cloudFrontUrl"]}{image.Name}").ToArray();
     }
 }

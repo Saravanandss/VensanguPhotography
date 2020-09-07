@@ -1,12 +1,22 @@
-using NUnit.Framework;
-using VensanguPhotography.ImageApi.Controllers;
+using System;
+using Microsoft.Extensions.DependencyInjection;
 using VensanguPhotography.ImageApi.Helpers;
+using Xunit;
 
 namespace VensanguPhotography.ImageApi.UnitTest
 {
-    [TestFixture]
     public class ImageControllerTest
     {
-        public bool IsPortrait(string path) => path.EndsWith("P");
+        public ImageControllerTest()
+        {
+            var services = new ServiceCollection();
+            services.AddTransient<IS3Helper, S3HelperMock>();
+        }
+
+        [Fact]
+        public void TestImageControllerGet()
+        {
+
+        }
     }
 }

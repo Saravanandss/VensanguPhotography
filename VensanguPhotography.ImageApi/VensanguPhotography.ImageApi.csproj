@@ -1,12 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
+<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
     <AWSProjectType>Lambda</AWSProjectType>
-    <AssemblyName>bootstrap</AssemblyName>
   </PropertyGroup>
-
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Remove="lib\**" />
     <Content Remove="lib\**" />
     <EmbeddedResource Remove="lib\**" />
@@ -26,8 +25,12 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+=======
+    <PackageReference Include="AWSSDK.S3" Version="3.3.110.62" />
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.100.1" />
+    <PackageReference Include="Amazon.Lambda.AspNetCoreServer" Version="5.1.1" />
+>>>>>>> 4.0
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\VensanguPhotography.Core\VensanguPhotography.Core.csproj" />
   </ItemGroup>

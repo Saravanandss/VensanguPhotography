@@ -6,9 +6,9 @@ namespace VensanguPhotography.ImageApi.Helpers
 {
     public interface IS3Helper
     {
-        Task<IEnumerable<Image>> GetAllImages();
+        Task<IEnumerable<Image>> GetImages();
         Task<Metadata> ReadMetadata();
         void UpdateMetadata(Metadata metadata);
-        Task<IEnumerable<Image>> GetImagesOfCategory(Category category);
+        Task<IEnumerable<Image>> GetImages(Category category);
     }
 }
