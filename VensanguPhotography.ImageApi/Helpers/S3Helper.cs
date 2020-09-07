@@ -40,6 +40,8 @@ namespace VensanguPhotography.ImageApi.Helpers
             var images = new List<Image>();
             foreach (var s3Object in s3Objects)
             {
+                if(s3Object.Key.EndsWith(".json")) continue;
+
                 var tags = await s3.GetObjectTags(s3Object);
 
                 images.Add(new Image

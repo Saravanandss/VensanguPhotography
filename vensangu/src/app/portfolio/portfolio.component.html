@@ -1,0 +1,9 @@
+<div class="grid">
+    <ng-container *ngFor="let images of imageChunks">
+        <div class="image-container">
+            <ng-container *ngFor="let image of images">
+                <app-render imagePath="{{image.path}}"></app-render>
+            </ng-container>
+        </div>
+    </ng-container>
+</div>
