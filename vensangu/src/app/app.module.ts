@@ -9,6 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { PortfolioService } from './services/portfolio.service';
 import { CommonModule } from '@angular/common';
 import { RenderComponent } from './render/render.component';
+import { ConfigureComponent } from './configure/configure.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { RenderComponent } from './render/render.component';
     AppComponent,
     PortfolioComponent,
     AboutComponent,
-    RenderComponent
+    RenderComponent,
+    ConfigureComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
