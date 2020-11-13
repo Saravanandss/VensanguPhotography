@@ -12,5 +12,6 @@
   "s3-prefix": "VensanguPhotography.ImageApi/",
   "s3-bucket": "vensangu-code",
   "template": "serverless.template",
-  "template-parameters": "ShouldCreateBucket=false;BucketName=vensangu-code"
+  "template-parameters": "ShouldCreateBucket=false;BucketName=vensangu-code",
+  "function-runtime":"dotnetcore3.1"
 }

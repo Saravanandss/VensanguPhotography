@@ -5,23 +5,21 @@
 
 .grid {
   margin: 10px;
+  display: grid;
+
   @media screen and (max-width: 768px) {
-    display: grid;
     grid-template-columns: 1fr;
   }
 
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
   @media screen and (min-width: 992px) and (max-width: 1200px) {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
 
   @media screen and (min-width: 1200px) and (min-width: 1200px) {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

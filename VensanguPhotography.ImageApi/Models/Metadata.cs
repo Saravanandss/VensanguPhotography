@@ -16,6 +16,7 @@ namespace VensanguPhotography.ImageApi.Models
 
     public enum Category
     {
+        All,
         Portfolio,
         Portrait,
         Family,

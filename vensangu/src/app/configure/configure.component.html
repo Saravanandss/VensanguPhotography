@@ -1,0 +1,15 @@
+<form>
+    <div class="image-container">
+        <ng-container *ngFor="let image of images">
+            <div>
+                <app-render imagePath="{{image.path}}"></app-render>
+                <p>
+                    <select name="Orientation" [formControl]="image.orientation">
+                        <option value="0">Landscape</option>
+                        <option value="1">Portrait</option>
+                    </select>
+                </p>
+            </div>
+        </ng-container>
+    </div>
+</form>

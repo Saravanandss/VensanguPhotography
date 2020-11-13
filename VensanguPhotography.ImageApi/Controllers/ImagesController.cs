@@ -22,6 +22,7 @@ namespace VensanguPhotography.ImageApi.Controllers
             this.configuration = configuration;
         }
 
+        [HttpGet]
         [HttpGet("{category}")]
         public async Task<ImagesModel> Get(Category category)
         {

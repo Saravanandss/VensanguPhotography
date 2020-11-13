@@ -30,7 +30,7 @@ namespace VensanguPhotography.ImageApi.Helpers
         {
             if (!IsValidBucketName()) return null;
 
-            Console.WriteLine("Bucket Name: " +  configuration[BUCKETNAME]);
+            Console.WriteLine("Bucket Name: " + configuration[BUCKETNAME]);
 
             var s3 = new AwsS3(configuration[BUCKETNAME], awsOptions);
             var s3Objects = await s3.GetObjectsList();
@@ -40,7 +40,7 @@ namespace VensanguPhotography.ImageApi.Helpers
             var images = new List<Image>();
             foreach (var s3Object in s3Objects)
             {
-                if(s3Object.Key.EndsWith(".json")) continue;
+                if (s3Object.Key.EndsWith(".json")) continue;
 
                 var tags = await s3.GetObjectTags(s3Object);
 
@@ -55,9 +55,9 @@ namespace VensanguPhotography.ImageApi.Helpers
         }
 
         public async Task<IEnumerable<Image>> GetImages(Category category)
-        {   
+        {
             var images = await GetImages();
-            return images?.Where(image => image.Category == category);
+            return category == Category.All ? images : images?.Where(image => image.Category == category);
         }
 
         public async Task<Metadata> ReadMetadata()
