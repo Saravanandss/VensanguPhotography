@@ -6,11 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AboutComponent } from './about/about.component';
-import { PortfolioService } from './services/portfolio.service';
+import { ImageService } from './services/image.service';
 import { CommonModule } from '@angular/common';
 import { RenderComponent } from './render/render.component';
 import { ConfigureComponent } from './configure/configure.component';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,9 +24,11 @@ import { ConfigureComponent } from './configure/configure.component';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
-    CommonModule  
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [PortfolioService],
+  providers: [ImageService],
   bootstrap: [AppComponent]
 })
 

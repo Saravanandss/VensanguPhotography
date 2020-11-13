@@ -13,5 +13,4 @@ export class RenderComponent implements OnInit {
   }
 
   @Input() imagePath: string;
-
 }

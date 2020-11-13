@@ -1,15 +1,16 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PortfolioService } from '../services/portfolio.service';
+import { ImageService } from '../services/image.service';
+import { Image } from '../Image';
 
 @Component({
     templateUrl: './portfolio.component.html',
     styleUrls: ['./portfolio.component.less'],
-    providers: [PortfolioService]
+    providers: [ImageService]
 })
 
 export class PortfolioComponent implements OnInit {
-    constructor(private route: ActivatedRoute, private portfolioService: PortfolioService) {
+    constructor(private route: ActivatedRoute, private imageService: ImageService) {
         this.loadImageFiles();
         this.decideNumberOfColumns();
     }
@@ -41,10 +42,10 @@ export class PortfolioComponent implements OnInit {
     }
 
     loadImageFiles = async () => {
-        await this.portfolioService.getAllImages(this.route.data['value'].type)
+        await this.imageService.getImages(this.route.data['value'].type)
             .then(images => {
-                this.allImages = [...images.portraits.map(im => new Image(im, Orientation.portrait)),
-                ...images.landscapes.map(im => new Image(im, Orientation.landscape))].sort();
+                this.allImages = [...images.portraits.map(im => new Image(im, Image.Orientation.portrait)),
+                ...images.landscapes.map(im => new Image(im, Image.Orientation.landscape))].sort();
 
                 //Take the weighted total
                 this.totalHeight = images.landscapes.length * 2 + images.portraits.length * 4.5;
@@ -62,7 +63,7 @@ export class PortfolioComponent implements OnInit {
         for (let imageIndex = 0; imageIndex < this.allImages.length; imageIndex++) {
             let image = this.allImages[imageIndex];
             if (columnHeight + image.height > averageHeight &&
-                image.orientation == Orientation.portrait) {
+                image.orientation == Image.Orientation.portrait) {
                 this.swapWithNextLandscape(imageIndex);
                 image = this.allImages[imageIndex];
             }
@@ -84,25 +85,11 @@ export class PortfolioComponent implements OnInit {
     swapWithNextLandscape = (imageIndex: number) => {
         let tempImage = this.allImages[imageIndex];
         let landscapeIndex = this.allImages.slice(imageIndex, this.allImages.length - 1)
-            .findIndex(im => im.orientation === Orientation.landscape);
+            .findIndex(im => im.orientation === Image.Orientation.landscape);
         if (landscapeIndex >= 0) {
             landscapeIndex += imageIndex; //compensating the slice we did before.
             this.allImages[imageIndex] = this.allImages[landscapeIndex];
             this.allImages[landscapeIndex] = tempImage;
         }
     }
-}
-
-const Orientation = { "landscape": 0, "portrait": 1 };
-
-export class Image {
-    constructor(path: string, orientation: number) {
-        this.path = path;
-        this.orientation = orientation;
-        // For 3:2 image, if height of landscape is 2, height of portrait: 1.5 * 3 = 4.5
-        this.height = orientation === Orientation.landscape ? 2 : 4.5;
-    }
-    public path: string;
-    public orientation: number;
-    public height: number;
 }

@@ -1,7 +1,7 @@
 #AWS commands
 
 ##Sync vensangu-web code
-aws s3 sync ~/Programming/VensanguPhotography/vensangu/dist/vensangu s3://vensangu-web
+aws s3 sync ~/Programming/VensanguPhotography/vensangu/dist/vensangu s3://www.vensangu.com
 
 ##Move an image to S3
 aws s3 cp filename.jpg s3://vensangu-images

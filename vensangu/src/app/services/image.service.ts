@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Images } from '../Images';
+import { Images } from '../Image';
 import { config } from '../config';
 
 @Injectable()
-export class PortfolioService{
+export class ImageService{
     constructor(private http: HttpClient){        
     }
 
     private imageApiUrl: string = config.imageApiUrl;
     
-    public getAllImages = (type: string) : Promise<Images> => {
+    public getImages = (type: string) : Promise<Images> => {
         console.log(type);
         console.log(this.imageApiUrl + '/' + type);
         return this.http.get(this.imageApiUrl + '/' + type)

@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AboutComponent } from './about/about.component';
-import { PortfolioService } from './services/portfolio.service';
+import { ImageService } from './services/image.service';
 import { AppModule } from './app.module';
 
 @NgModule({
@@ -17,7 +17,7 @@ import { AppModule } from './app.module';
     AppModule,
     BrowserTransferStateModule    
   ],
-  providers: [PortfolioService],
+  providers: [ImageService],
   bootstrap: [AppComponent]
 })
 
