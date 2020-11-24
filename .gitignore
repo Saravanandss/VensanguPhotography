@@ -3,3 +3,5 @@ bin/
 .vs/
 appsettings.Development.json
 *-lock.json
+node_modules/
+dist/
