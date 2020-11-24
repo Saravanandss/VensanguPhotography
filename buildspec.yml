@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - wget https://packages.microsoft.com/config/ubuntu/20.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+      - sudo dpkg -i packages-microsoft-prod.deb
+      - sudo apt-get update; \
+        sudo apt-get install -y apt-transport-https && \
+        sudo apt-get update && \
+        sudo apt-get install -y dotnet-sdk-5.0
+  build:
+    commands:
+      - cd ./VensanguPhotography.ImageApi
+      - dotnet build
+
+artifacts:
+  secondary-artifacts:
+    artifact1:
+      base-directory: ./VensanguPhotography.ImageApi
+      fiels:
+        - bin/Release/netcoreapp3.1/*
