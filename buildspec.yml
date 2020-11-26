@@ -18,5 +18,5 @@ artifacts:
   secondary-artifacts:
     artifact1:
       base-directory: ./VensanguPhotography.ImageApi
-      fiels:
+      files:
         - bin/Release/netcoreapp3.1/*
