@@ -12,6 +12,12 @@ phases:
       - sudo apt-get install -y apt-transport-https
       - sudo apt-get update
       - sudo apt-get install -y dotnet-sdk-5.0
+
+      - sudo apt install nodejs
+      - sudo apt-get install
+      - nodejs -v
+      - npm install -g @angular/cli
+
   build:
     commands:
       - cd ./VensanguPhotography.ImageApi
