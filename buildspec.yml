@@ -24,18 +24,16 @@ phases:
       - cd ./VensanguPhotography.ImageApi
       - dotnet build
       - cd ../vensangu
-      - npm install --save-dev @angular-devkit/build-angular
+      - npm install
       - ng build --prod
 
 artifacts:
   secondary-artifacts:
-    artifact1:
-      artifactIdentifier: VensanguCore
+    VensanguCore:
       base-directory: ./VensanguPhotography.ImageApi
       files:
         - 'bin/Release/netcoreapp3.1/*'
-    artifact2:
-      artifactIdentifier: VensanguWeb
+    VensanguWeb:
       base-directory: ./vensangu
       files:
         - 'dist/*'
