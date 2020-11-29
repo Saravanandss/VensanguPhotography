@@ -13,10 +13,9 @@ phases:
       - sudo apt-get install -y apt-transport-https
       - sudo apt-get install -y dotnet-sdk-5.0
 
+      - sudo apt-get install python-software-properties
+      - curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
       - sudo apt-get install -y nodejs
-
-      - sudo apt-get install -y libnode-dev
-      - sudo apt-get install -y npm
       - nodejs -v
       - npm install -g @angular/cli
 
