@@ -30,10 +30,8 @@ phases:
 artifacts:
   secondary-artifacts:
     VensanguCore:
-      base-directory: ./VensanguPhotography.ImageApi
       files:
-        - 'bin/Release/netcoreapp3.1/*'
+        - 'VensanguPhotography.ImageApi/bin/Release/netcoreapp3.1/*'
     VensanguWeb:
-      base-directory: ./vensangu
       files:
-        - 'dist/*'
+        - 'vensangu/dist/*'
