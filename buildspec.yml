@@ -18,6 +18,7 @@ phases:
       - sudo apt-get install -y nodejs
       - nodejs -v
       - npm install -g @angular/cli
+      - sudo apt-get install tree
 
   build:
     commands:
@@ -26,6 +27,8 @@ phases:
       - cd ../vensangu
       - npm install
       - ng build --prod
+      - cd $CODEBUILD_SRC_DIR
+      - tree
 
 artifacts:
   secondary-artifacts:
