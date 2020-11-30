@@ -23,12 +23,10 @@ phases:
   build:
     commands:
       - cd ./VensanguPhotography.ImageApi
-      - dotnet build
+      - dotnet build --configuration Release
       - cd ../vensangu
       - npm install
       - ng build --prod
-      - cd $CODEBUILD_SRC_DIR
-      - tree
 
 artifacts:
   secondary-artifacts:
