@@ -31,7 +31,7 @@ artifacts:
   secondary-artifacts:
     VensanguCore:
       files:
-        - VensanguPhotography.ImageApi/bin/Release/netcoreapp3.1/*
+        - $CODEBUILD_SRC_DIR/VensanguPhotography.ImageApi/bin/Release/netcoreapp3.1/*
     VensanguWeb:
       files:
-        - vensangu/dist/*
+        - $CODEBUILD_SRC_DIR/vensangu/dist/*
