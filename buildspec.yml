@@ -30,7 +30,7 @@ phases:
 
 artifacts:
   secondary-artifacts:
-    VensanguCore:
+    VensanguImageApi:
       files:
         - $CODEBUILD_SRC_DIR/VensanguPhotography.ImageApi/bin/Release/netcoreapp3.1/*
     VensanguWeb:
