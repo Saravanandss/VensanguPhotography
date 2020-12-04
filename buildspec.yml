@@ -33,6 +33,8 @@ artifacts:
     VensanguImageApi:
       files:
         - $CODEBUILD_SRC_DIR/VensanguPhotography.ImageApi/bin/Release/netcoreapp3.1/*
+      discard-paths: yes
     VensanguWeb:
       files:
         - $CODEBUILD_SRC_DIR/vensangu/dist/**/*
+      discard-paths: yes
