@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Images } from '../Image';
-import { config } from '../config';
+import { Images } from '../models/Image';
+import { config } from '../models/config';
 
 @Injectable()
 export class ImageService{

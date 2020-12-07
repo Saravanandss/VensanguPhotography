@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ImageService } from '../services/image.service';
-import { Image } from '../Image';
+import { Image } from '../models/Image';
 
 @Component({
     templateUrl: './portfolio.component.html',
@@ -11,8 +11,8 @@ import { Image } from '../Image';
 
 export class PortfolioComponent implements OnInit {
     constructor(private route: ActivatedRoute, private imageService: ImageService) {
-        this.loadImageFiles();
         this.decideNumberOfColumns();
+        this.loadImageFiles();
     }
 
     public allImages: Image[];

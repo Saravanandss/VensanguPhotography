@@ -2,9 +2,27 @@
   text-align: center;
 }
 
-.align-right {
-  text-align: right;
-  //max-width: 96%;
+
+h1 {
+  font-size: 2em;
+  letter-spacing: .2em;
+}
+
+@media screen and (max-width: 768px) {
+  .align-right {
+    text-align: center;
+  }
+
+  nav a {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .align-right {
+    text-align: right;
+    padding: 1em;
+  }
 }
 
 nav a {
@@ -30,25 +48,6 @@ nav a {
 
 section.header {
   position: sticky;
-  top: -1;
+  // top: -1;
   display: flow-root;
-}
-
-/* @media screen and (min-width: 30em) and (orientation: landscape) */
-@media screen and (min-width: 30em) {
-  nav a {
-    margin-bottom: 10px;
-  }
-
-  h1 {
-    font-size: 3em;
-    letter-spacing: .3em;
-  }
-}
-
-@media screen and (max-width: 30em) {
-  h1 {
-    font-size: 2em;
-    letter-spacing: .2em;
-  }
 }
