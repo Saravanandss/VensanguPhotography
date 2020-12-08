@@ -6,7 +6,7 @@ phases:
       - su && apt-get update
       - apt-get install sudo
       - sudo -i
-      
+
       - wget https://packages.microsoft.com/config/ubuntu/20.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
       - sudo dpkg -i packages-microsoft-prod.deb
       - sudo apt-get update
@@ -18,13 +18,15 @@ phases:
       - sudo apt-get install -y nodejs
       - nodejs -v
       - npm install -g @angular/cli
-      - dotnet tool install -g Amazon.Lambda.Tools
       - sudo apt-get install tree
 
   build:
     commands:
       - cd $CODEBUILD_SRC_DIR/VensanguPhotography.ImageApi
-      - dotnet lambda deploy-function vensangu-api-AspNetCoreFunction-RX0PVYL720XA
+      - dotnet tool install -g Amazon.Lambda.Tools
+      - dotnet tool update -g Amazon.Lambda.Tools
+      - dotnet lambda deploy-function vensangu-api-AspNetCoreFunction-RX0PVYL720XA --function-role "arn:aws:iam::379357806581:role/vensangu-api-AspNetCoreFunctionRole-145L4HJPA1ZX5" --region "us-east-2"
+
       - cd $CODEBUILD_SRC_DIR/vensangu
       - npm install
       - ng build --prod
