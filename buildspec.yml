@@ -31,12 +31,12 @@ phases:
 artifacts:
   secondary-artifacts:
     VensanguImageApi:
-      base-directory: $CODEBUILD_SRC_DIR/VensanguPhotography.ImageApi/bin/Release/netcoreapp3.1/
+      base-directory: '$CODEBUILD_SRC_DIR/VensanguPhotography.ImageApi/bin/Release/netcoreapp3.1/'
       files:
-        - *
+        - '*'
       discard-paths: no
     VensanguWeb:
-      base-directory: $CODEBUILD_SRC_DIR/vensangu/dist/**/
+      base-directory: '$CODEBUILD_SRC_DIR/vensangu/dist/**'
       files:
-        - *
+        - '*'
       discard-paths: no
