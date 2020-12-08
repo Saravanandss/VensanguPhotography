@@ -18,25 +18,20 @@ phases:
       - sudo apt-get install -y nodejs
       - nodejs -v
       - npm install -g @angular/cli
+      - dotnet tool install -g Amazon.Lambda.Tools
       - sudo apt-get install tree
 
   build:
     commands:
-      - cd ./VensanguPhotography.ImageApi
-      - dotnet build --configuration Release
-      - cd ../vensangu
+      - cd $CODEBUILD_SRC_DIR/VensanguPhotography.ImageApi
+      - dotnet lambda deploy-function vensangu-api-AspNetCoreFunction-RX0PVYL720XA
+      - cd $CODEBUILD_SRC_DIR/vensangu
       - npm install
       - ng build --prod
 
 artifacts:
   secondary-artifacts:
-    VensanguImageApi:
-      base-directory: '$CODEBUILD_SRC_DIR/VensanguPhotography.ImageApi/bin/Release/netcoreapp3.1/'
-      files:
-        - '*'
-      discard-paths: no
     VensanguWeb:
       base-directory: '$CODEBUILD_SRC_DIR/vensangu/dist/**'
       files:
         - '*'
-      discard-paths: no
