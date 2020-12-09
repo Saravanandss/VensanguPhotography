@@ -23,11 +23,14 @@ phases:
   build:
     commands:
       - cd $CODEBUILD_SRC_DIR/VensanguPhotography.ImageApi
+      - dotnet tool install -g Amazon.Lambda.Tools
+      - dotnet tool update -g Amazon.Lambda.Tools
       - dotnet lambda package
 
       - cd $CODEBUILD_SRC_DIR/vensangu
       - npm install
       - ng build --prod
+      - tree $CODEBUILD_SRC_DIR/vensangu/dist/ -L 3
 
 artifacts:
   secondary-artifacts:
