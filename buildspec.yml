@@ -23,9 +23,7 @@ phases:
   build:
     commands:
       - cd $CODEBUILD_SRC_DIR/VensanguPhotography.ImageApi
-      - dotnet tool install -g Amazon.Lambda.Tools
-      - dotnet tool update -g Amazon.Lambda.Tools
-      - dotnet lambda deploy-function vensangu-api-AspNetCoreFunction-RX0PVYL720XA --function-role "arn:aws:iam::379357806581:role/vensangu-api-AspNetCoreFunctionRole-145L4HJPA1ZX5" --region "us-east-2"
+      - dotnet publish
 
       - cd $CODEBUILD_SRC_DIR/vensangu
       - npm install
@@ -33,7 +31,12 @@ phases:
 
 artifacts:
   secondary-artifacts:
+    VensanguImageApi:
+      base-directory: '$CODEBUILD_SRC_DIR/VensanguPhotography.ImageApi/bin/Release/publish'
+      files:
+        - '*'
     VensanguWeb:
       base-directory: '$CODEBUILD_SRC_DIR/vensangu/dist/**'
       files:
         - '*'
+    

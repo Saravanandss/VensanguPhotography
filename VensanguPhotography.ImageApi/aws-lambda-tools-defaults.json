@@ -13,5 +13,6 @@
   "s3-bucket": "vensangu-code",
   "template": "serverless.template",
   "template-parameters": "ShouldCreateBucket=false;BucketName=vensangu-code",
-  "function-runtime":"dotnetcore3.1"
+  "function-runtime":"dotnetcore3.1",
+  "function-role": "arn:aws:iam::379357806581:role/vensangu-api-AspNetCoreFunctionRole-145L4HJPA1ZX5"
 }
