@@ -23,7 +23,7 @@ phases:
   build:
     commands:
       - cd $CODEBUILD_SRC_DIR/VensanguPhotography.ImageApi
-      - dotnet publish
+      - dotnet publish --configuration Release
 
       - cd $CODEBUILD_SRC_DIR/vensangu
       - npm install
