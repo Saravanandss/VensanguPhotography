@@ -25,7 +25,7 @@ phases:
       - cd $CODEBUILD_SRC_DIR/VensanguPhotography.ImageApi
       - dotnet tool install -g Amazon.Lambda.Tools
       - dotnet tool update -g Amazon.Lambda.Tools
-      - dotnet lambda package
+      - dotnet lambda deploy-function vensangu-api-AspNetCoreFunction-RX0PVYL720XA
 
       - cd $CODEBUILD_SRC_DIR/vensangu
       - npm install
